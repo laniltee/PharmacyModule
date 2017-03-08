@@ -7,3 +7,9 @@ Group Members
  - Lanil Marasinghe
  - Philiphs
  - Supun
+ 
+ Expected Functions
+ 
+ -Stock Handling
+ -Viewing Stock Reports
+ -Order Level Notifications
