@@ -1,0 +1,9 @@
+Default Path:
+C:\Program Files\MongoDB\Server\3.4\bin
+
+Backing Up MongoDB Database:
+mongodump -d pharmacy -o C:\DatabaseBackup
+
+Restoring Database
+mongorestore -d pharmacy "D:\SLIIT\3rd Year\AF\Project\Repositories\PharmacyModule\Database\pharmacy"
+(Add your path within double quotes")
