@@ -9,10 +9,9 @@ var express = require('express');
 var app = express();
 
 //Loading Modules
-
-var database;
+var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');;
 var patients = require('./models/patients');
-
+var users = require('./models/users');
 
 
 
@@ -47,11 +46,14 @@ app.get('/databaseCheck', function (request, response) {
     });
 });
 
-//Checking Imported Modugle
+//Using a model to fetch patient data
 app.get('/patients', function(request, response){
-    
-    console.log(patients.getAllPatients());
-    response.end("Response End In MAIN");
+    patients.getAllPatients(response);
+});
+
+//Using a model to fetch user data
+app.get('/users', function(request, response){
+    users.getAllUsers(response);
 });
 
 
