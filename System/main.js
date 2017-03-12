@@ -4,11 +4,20 @@
  * Memebers: Movinda, Lanil, Supun, Phillips
  */
 
+//ExpressJS Setup
 var express = require('express');
 var app = express();
 
-//Database Setup
-var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');
+//Loading Modules
+
+var database;
+var patients = require('./models/patients');
+
+
+
+
+
+//Loading Modules End
 
 //Server Startup
 app.listen(8080, function () {
@@ -20,6 +29,9 @@ app.get('/', function (request, response) {
     response.end("Hello !");
 });
 
+//Setting Public Folder
+app.use(express.static('public'));
+
 //Checking Database Connection
 app.get('/databaseCheck', function (request, response) {
     database.collection("users").find().toArray(function (error, result) {
@@ -29,8 +41,17 @@ app.get('/databaseCheck', function (request, response) {
             response.end(JSON.stringify(errorResult));
         } else {
             var finalResult = {"status": 200, "message": "success", "count": result.length, "results": result};
-            console.log("Collection Fetch Success :(");
+            console.log("Collection Fetch Success :)");
             response.end(JSON.stringify(finalResult));
         }
     });
 });
+
+//Checking Imported Modugle
+app.get('/patients', function(request, response){
+    
+    console.log(patients.getAllPatients());
+    response.end("Response End In MAIN");
+});
+
+
