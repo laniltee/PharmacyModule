@@ -22,3 +22,34 @@ exports.getAllPatients = function (response) {
     });
 };
 
+//Returns the patient object which holds the given id
+exports.getPatient = function (patientIdIn, response) {
+    database.collection("patients").find({patientId: parseInt(patientIdIn)}).toArray(function (error, result) {
+        if (error) {
+            var errorResult = {"status": 500, "message": error.toString()};
+            console.log("Collection Patients Fetch Failed :(");
+            response.end(JSON.stringify(errorResult));
+        } else {
+            var finalResult = {"status": 200, "message": "success", "request": parseInt(patientIdIn), "count": result.length, "results": result};
+            console.log("Collection Patients Fetch Success :)");
+            response.end(JSON.stringify(finalResult));
+        }
+    });
+};
+
+//Adds new patient to the database
+exports.addPatient = function (request, response) {
+    database.collection("patients").insert({patientId: parseInt(request.body.id), name: request.body.name}, function (error, result) {
+        if (error) {
+            var errorResult = {"status": 500, "message": error.toString()};
+            response.status(500);
+            response.end(JSON.stringify(errorResult));
+        } 
+        
+        if(result) {
+            var successResult = {"status": 200, "message": "Added", "object": request.body};
+            response.status(200);
+            response.end(JSON.stringify(successResult));
+        }
+    });
+};

@@ -4,19 +4,23 @@
  * Memebers: Movinda, Lanil, Supun, Phillips
  */
 
-//ExpressJS Setup
+//---------------------ExpressJS Setup & Required Libraries---------------------
 var express = require('express');
 var app = express();
 
-//Loading Modules
-var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');;
+var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+//---------------------Loading Models---------------------
 var patients = require('./models/patients');
 var users = require('./models/users');
 
 
 
 
-//Loading Modules End
+//---------------------Loading Models End---------------------\\
 
 //Server Startup
 app.listen(8080, function () {
@@ -47,13 +51,26 @@ app.get('/databaseCheck', function (request, response) {
 });
 
 //Using a model to fetch patient data
-app.get('/patients', function(request, response){
+app.get('/patients', function (request, response) {
     patients.getAllPatients(response);
 });
 
 //Using a model to fetch user data
-app.get('/users', function(request, response){
+app.get('/users', function (request, response) {
     users.getAllUsers(response);
 });
 
+//Loads login page
+app.get('/login', function (request, response) {
 
+});
+
+//Gets one patient with id
+app.get('/patients/:id', function (request, response) {
+    patients.getPatient(request.params.id, response);
+});
+
+//Add new patient
+app.post('/patients', function (request, response) {
+    patients.addPatient(request, response);
+});
