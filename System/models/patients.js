@@ -26,7 +26,7 @@ exports.getAllPatients = function (response) {
 
 //Returns the patient object which holds the given id
 exports.getPatient = function (patientIdIn, response) {
-    database.collection("patients").find({patientId: parseInt(patientIdIn)}).toArray(function (error, result) {
+    database.collection("patients").find({patientId: patientIdIn}).toArray(function (error, result) {
         if (error) {
             response.status(serverError);
             response.json(error);
@@ -39,7 +39,7 @@ exports.getPatient = function (patientIdIn, response) {
 
 //Adds new patient to the database
 exports.addPatient = function (request, response) {
-    database.collection("patients").insert({patientId: parseInt(request.body.id), name: request.body.name}, function (error, result) {
+    database.collection("patients").insert({patientId: request.body.id, name: request.body.name}, function (error, result) {
         if (error) {
             response.status(serverError);
             response.json(error);

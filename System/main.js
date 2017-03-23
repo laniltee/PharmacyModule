@@ -8,7 +8,7 @@
 var express = require('express');
 var app = express();
 
-var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');
+var database = require('mongoskin').db('mongodb://localhost:27017/sliit');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -37,7 +37,7 @@ app.use(express.static('public'));
 
 //Checking Database Connection
 app.get('/databaseCheck', function (request, response) {
-    database.collection("users").find().toArray(function (error, result) {
+    database.collection("trains").find().toArray(function (error, result) {
         if (error) {
             var errorResult = {"status": 500, "message": error.toString()};
             console.log("Collection Fetch Failed :( " + error.message);
