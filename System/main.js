@@ -40,7 +40,7 @@ app.get('/databaseCheck', function (request, response) {
     database.collection("users").find().toArray(function (error, result) {
         if (error) {
             var errorResult = {"status": 500, "message": error.toString()};
-            console.log("Collection Fetch Failed :(");
+            console.log("Collection Fetch Failed :( " + error.message);
             response.end(JSON.stringify(errorResult));
         } else {
             var finalResult = {"status": 200, "message": "success", "count": result.length, "results": result};
@@ -62,7 +62,7 @@ app.get('/users', function (request, response) {
 
 //Loads login page
 app.get('/login', function (request, response) {
-
+    response.end("Login Page Clled! ");
 });
 
 //Gets one patient with id

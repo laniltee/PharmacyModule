@@ -7,17 +7,19 @@
 //Database Setup
 var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');
 
+var serverError = 500;
+var statusSuccess = 200;
+var statusDone = 201;
+
 //Returns all the users in the database
 exports.getAllUsers = function (response) {
     database.collection("users").find().toArray(function (error, result) {
         if (error) {
-            var errorResult = {"status": 500, "message": error.toString()};
-            console.log("Collection Users Fetch Failed :(");
-            response.end(JSON.stringify(errorResult));
+            response.status(500);
+            response.json(error);
         } else {
-            var finalResult = {"status": 200, "message": "success", "count": result.length, "results": result};
-            console.log("Collection Users Fetch Success :)");
-            response.end(JSON.stringify(finalResult));
+            response.status(200);
+            response.json(result);
         }
     });
 };

@@ -7,17 +7,19 @@
 //Database Setup
 var database = require('mongoskin').db('mongodb://localhost:27017/pharmacy');
 
+var serverError = 500;
+var statusSuccess = 200;
+var statusDone = 201;
+
 //Returns all the patients in the database
 exports.getAllPatients = function (response) {
     database.collection("patients").find().toArray(function (error, result) {
         if (error) {
-            var errorResult = {"status": 500, "message": error.toString()};
-            console.log("Collection Patients Fetch Failed :(");
-            response.end(JSON.stringify(errorResult));
+            response.status(serverError);
+            response.json(error);
         } else {
-            var finalResult = {"status": 200, "message": "success", "count": result.length, "results": result};
-            console.log("Collection Patients Fetch Success :)");
-            response.end(JSON.stringify(finalResult));
+            response.status(statusSuccess);
+            response.json(result);
         }
     });
 };
@@ -26,13 +28,11 @@ exports.getAllPatients = function (response) {
 exports.getPatient = function (patientIdIn, response) {
     database.collection("patients").find({patientId: parseInt(patientIdIn)}).toArray(function (error, result) {
         if (error) {
-            var errorResult = {"status": 500, "message": error.toString()};
-            console.log("Collection Patients Fetch Failed :(");
-            response.end(JSON.stringify(errorResult));
+            response.status(serverError);
+            response.json(error);
         } else {
-            var finalResult = {"status": 200, "message": "success", "request": parseInt(patientIdIn), "count": result.length, "results": result};
-            console.log("Collection Patients Fetch Success :)");
-            response.end(JSON.stringify(finalResult));
+            response.status(statusSuccess);
+            response.json(result[0]);
         }
     });
 };
@@ -41,15 +41,13 @@ exports.getPatient = function (patientIdIn, response) {
 exports.addPatient = function (request, response) {
     database.collection("patients").insert({patientId: parseInt(request.body.id), name: request.body.name}, function (error, result) {
         if (error) {
-            var errorResult = {"status": 500, "message": error.toString()};
-            response.status(500);
-            response.end(JSON.stringify(errorResult));
-        } 
-        
-        if(result) {
-            var successResult = {"status": 200, "message": "Added", "object": request.body};
-            response.status(200);
-            response.end(JSON.stringify(successResult));
+            response.status(serverError);
+            response.json(error);
+        }
+
+        if (result) {
+            response.status(statusDone);
+            response.json(request.body);
         }
     });
 };
