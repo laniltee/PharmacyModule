@@ -3,6 +3,6 @@
     "version": "1.0.0",
     "keywords": ["util", "functional", "server", "client", "browser"],
     "author": "Lanil Marasinghe",
-    "contributors": [],
+    "contributors": ["Movinda Rupasinghe", "Supun Thennakon", "Thisura Phillips"],
     "dependencies": {}
 }

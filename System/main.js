@@ -29,11 +29,19 @@ app.listen(8080, function () {
 
 //Default Route
 app.get('/', function (request, response) {
-    response.end("Hello !");
+    response.sendFile(__dirname + "\\index.html");
 });
 
-//Setting Public Folder
+//---------------------Setting Public Folders---------------------
 app.use(express.static('public'));
+app.use("/bootstrap", express.static(__dirname + '/assets/bootstrap'));
+app.use("/build", express.static(__dirname + '/assets/build'));
+app.use("/dist", express.static(__dirname + '/assets/dist'));
+app.use("/documentation", express.static(__dirname + '/assets/documentation'));
+app.use("/pages", express.static(__dirname + '/assets/pages'));
+app.use("/plugins", express.static(__dirname + '/assets/plugins'));
+app.use("/", express.static(__dirname + '/'));
+//---------------------Setting Public Folders End---------------------
 
 //Checking Database Connection
 app.get('/databaseCheck', function (request, response) {
