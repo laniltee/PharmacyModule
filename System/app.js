@@ -20,7 +20,24 @@ app.config(function ($routeProvider, $locationProvider) {
                 templateUrl: "views/MainStockTable.html",
                 controller: "StockController"
             })
-            .when("/paris", {
-                templateUrl: "paris.htm"
+            .when("/stock/add", {
+                templateUrl: "views/AddNewStock.html",
+                controller: "StockController"
+            })
+            .when("/stock/:id/add", {
+                templateUrl: "views/AddNewBatch.html",
+                controller: "StockController"
+            })
+            .when("/stock/:id/edit", {
+                templateUrl: "views/EditStock.html",
+                controller: "StockController"
+            })
+            .when("/stock/:id/order", {
+                templateUrl: "views/OrderStock.html",
+                controller: "StockController"
+            })
+            .when("/users", {
+                templateUrl: "views/Users.html",
+                controller: "UserController"
             });
 });

@@ -24,7 +24,14 @@ var users = require('./models/users');
 
 //Server Startup
 app.listen(8080, function () {
-    console.log("PharmacyModule Running On localhost:8080");
+    console.log("\n +-+-+-+-+-+-+-+-+-+-+\n |c|o|d|e|S|h|a|r|k|s|\n +-+-+-+-+-+-+-+-+-+-+");
+    console.log("  ____  _                                           \n" +
+" |  _ \\| |__   __ _ _ __ _ __ ___   __ _  ___ _   _ \n" +
+" | |_) | '_ \\ / _` | '__| '_ ` _ \\ / _` |/ __| | | |\n" +
+" |  __/| | | | (_| | |  | | | | | | (_| | (__| |_| |\n"+ 
+" |_|   |_| |_|\\__,_|_|  |_| |_| |_|\\__,_|\\___|\\__, |\n" +
+"                                              |___/ ");
+    console.log(" Running On 127.0.0.1:8080");
 });
 
 //Default Route
