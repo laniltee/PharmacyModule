@@ -1,5 +1,5 @@
 <!-- Logo -->
-<a href="index2.html" class="logo">
+<a href="" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>P</b>Mo</span>
     <!-- logo for regular state and mobile devices -->
@@ -18,7 +18,7 @@
             <li class="dropdown user user-menu">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                    <span class="hidden-xs">Nisha Hewage</span>
+                    <span class="hidden-xs">{{loggedUser}}</span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
@@ -26,15 +26,15 @@
                         <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                         <p>
-                            Nisha Hewage
-                            <small>Chief Pharmacist</small>
+                            {{loggedUser}}
+                            <small>{{userType}}</small>
                         </p>
                     </li>
                     <!-- Menu Body -->
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-right">
-                            <a href="" class="btn btn-default btn-flat">Sign out</a>
+                            <a href="" class="btn btn-default btn-flat" ng-click="signOut()">Sign out</a>
                         </div>
                     </li>
                 </ul>

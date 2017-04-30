@@ -41,18 +41,20 @@
     </head>
     <body class="hold-transition skin-blue sidebar-mini" ng-app="PharmacyModule">
         <div class="wrapper">
+            <div id="authentic-wrapper" ng-controller="LoginController">
+                <!-- Left side column. contains the logo and sidebar -->
+                <header class="main-header" ng-include="'includes/header.html'">
 
-            <header class="main-header" ng-include="'includes/header.html'">
+                </header>
+                <!-- Left side column. contains the logo and sidebar -->
+                <aside class="main-sidebar" ng-include src="sidebar">
 
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar" ng-include="'includes/aside.html'">
-
-            </aside>
-
+                </aside>
+            </div>
             <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper" ng-view>
-
+            <div class="content-wrapper" >
+                <!-- Fixing division for injecting views-->
+                <div ng-view></div>
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
@@ -112,6 +114,8 @@
         <!-- Controllers -->
         <script type="text/javascript" src='controllers/StockController.js'></script>
         <script type="text/javascript" src='controllers/LoginController.js'></script>
+        <script type="text/javascript" src='controllers/UserController.js'></script>
+        <script type="text/javascript" src='controllers/PrescriptionsController.js'></script>
         <!--<script type="text/javascript" src='controllers/PatientsController.js'></script>-->
     </body>
 </html>

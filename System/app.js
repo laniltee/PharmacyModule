@@ -12,10 +12,6 @@ var loggedUserType = "Chief Pharmacist";
 app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
-            .when("/", {
-                templateUrl: "views/DecksHome.html",
-                controller: "decksController"
-            })
             .when("/stock", {
                 templateUrl: "views/MainStockTable.html",
                 controller: "StockController"
@@ -39,5 +35,29 @@ app.config(function ($routeProvider, $locationProvider) {
             .when("/users", {
                 templateUrl: "views/Users.html",
                 controller: "UserController"
+            })
+            .when("/requests", {
+                templateUrl: "views/ViewRequests.html",
+                controller: "RequestsController"
+            })
+            .when("/front_stock", {
+                templateUrl: "views/FrontStock.html",
+                controller: "StockController"
+            })
+            .when("/front_requests", {
+                templateUrl: "views/FrontRequests.html",
+                controller: "RequestsController"
+            })
+            .when("/prescriptions", {
+                templateUrl: "views/Prescriptions.html",
+                controller: "PrescriptionsController"
+            })
+            .when("/prescriptions/add", {
+                templateUrl: "views/AddPrescription.html",
+                controller: "PrescriptionsController"
+            })
+            .when("/suppliers", {
+                templateUrl: "views/Suppliers.html",
+                controller: "SuppliersController"
             });
 });

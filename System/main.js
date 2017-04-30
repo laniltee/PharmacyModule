@@ -8,14 +8,17 @@
 var express = require('express');
 var app = express();
 
-var database = require('mongoskin').db('mongodb://localhost:27017/sliit');
+var database = require('mongoskin').db('mongodb://localhost/sliit');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 //---------------------Loading Models---------------------
-var patients = require('./models/patients');
-var users = require('./models/users');
+//var patients = require('./models/patients');
+//var users = require('./models/users.new');
+
+
+
 
 
 
@@ -26,11 +29,11 @@ var users = require('./models/users');
 app.listen(8080, function () {
     console.log("\n +-+-+-+-+-+-+-+-+-+-+\n |c|o|d|e|S|h|a|r|k|s|\n +-+-+-+-+-+-+-+-+-+-+");
     console.log("  ____  _                                           \n" +
-" |  _ \\| |__   __ _ _ __ _ __ ___   __ _  ___ _   _ \n" +
-" | |_) | '_ \\ / _` | '__| '_ ` _ \\ / _` |/ __| | | |\n" +
-" |  __/| | | | (_| | |  | | | | | | (_| | (__| |_| |\n"+ 
-" |_|   |_| |_|\\__,_|_|  |_| |_| |_|\\__,_|\\___|\\__, |\n" +
-"                                              |___/ ");
+            " |  _ \\| |__   __ _ _ __ _ __ ___   __ _  ___ _   _ \n" +
+            " | |_) | '_ \\ / _` | '__| '_ ` _ \\ / _` |/ __| | | |\n" +
+            " |  __/| | | | (_| | |  | | | | | | (_| | (__| |_| |\n" +
+            " |_|   |_| |_|\\__,_|_|  |_| |_| |_|\\__,_|\\___|\\__, |\n" +
+            "                                              |___/ ");
     console.log(" Running On 127.0.0.1:8080");
 });
 
@@ -65,6 +68,42 @@ app.get('/databaseCheck', function (request, response) {
     });
 });
 
+//Log In and Log Out functions
+var dummyUsers = [{username: "cp", fullname: "Chief Pharmacist", password: "cp123", type: "CP"},
+    {username: "ap", fullname: "Assistant Pharmacist", password: "ap123", type: "AP"}];
+app.get('/login', function (request, response) {
+    response.sendFile(__dirname + "\\login.html");
+});
+
+app.post('/authentication', function (request, response) {
+
+    var validated = false;
+    var reqUser = request.body.username;
+    var reqPassword = request.body.password;
+    var validatedFullName = "";
+    var validatedType = "";
+
+    for (var i = 0; i < dummyUsers.length; i++) {
+        if (dummyUsers[i].username == reqUser && dummyUsers[i].password == reqPassword) {
+            validated = true;
+            validatedFullName = dummyUsers[i].fullname;
+            validatedType = dummyUsers[i].type;
+            break;
+        }
+    }
+
+    if (validated) {
+        var successObject = {
+            fullname: validatedFullName,
+            type: validatedType
+        };
+        response.status(200);
+        response.json(successObject);
+    } else {
+        response.status(500);
+    }
+});
+
 //Using a model to fetch patient data
 app.get('/patients', function (request, response) {
     patients.getAllPatients(response);
@@ -88,4 +127,23 @@ app.get('/patients/:id', function (request, response) {
 //Add new patient
 app.post('/patients', function (request, response) {
     patients.addPatient(request, response);
+});
+
+//Gets a user
+app.get('/users/:userId', function (request, response) {
+    users.getUser(request.params.userId, response);
+});
+
+//Add new user
+app.post('/users', function (request, response) {
+    users.addUser(request.body, response);
+});
+
+//Removes a user
+app.delete('/users/:userId', function (request, response) {
+    users.removeUser(request.params.userId, response);
+});
+
+app.put('/users/:userId', function (request, response) {
+    users.updateUser(request.params.userId, request.body, response);
 });

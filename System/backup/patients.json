@@ -1,0 +1,44 @@
+{ 
+    "_id" : ObjectId("58d3dcc016545f8f090ff629"), 
+    "patientId" : "P65621321", 
+    "name" : "Saman Gunarathne", 
+    "prescriptions" : [
+        {
+            "id" : "P4654652", 
+            "doctor" : {
+                "name" : "Kamal Jayasinghe", 
+                "id" : "D6565"
+            }, 
+            "date" : "2016-05-25", 
+            "drugs" : [
+                {
+                    "name" : "Atenolol", 
+                    "dose" : "25mg", 
+                    "frequency" : "none", 
+                    "duration" : "2 weeks"
+                }
+            ], 
+            "openings" : [
+                {
+                    "date" : "2016-05-12", 
+                    "duration" : "1 weeks"
+                }
+            ]
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("58d3ef0b8ff32918d41fccdb"), 
+    "patientId" : NaN, 
+    "name" : "Sarath"
+}
+{ 
+    "_id" : ObjectId("58d3f2278ff32918d41fccdc"), 
+    "patientId" : NaN, 
+    "name" : "Sarath"
+}
+{ 
+    "_id" : ObjectId("58d3f24463bc8a0c04de283c"), 
+    "patientId" : "P234234", 
+    "name" : "Sarath"
+}
