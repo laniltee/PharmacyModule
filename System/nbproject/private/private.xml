@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/SLIIT/3rd%20Year/First%20Semester/AF/Project/Repositories/UISamples/PharmacyModule/System/views/Suppliers.html</file>
-            <file>file:/D:/SLIIT/3rd%20Year/First%20Semester/AF/Project/Repositories/UISamples/PharmacyModule/System/controllers/SuppliersController.js</file>
-            <file>file:/D:/SLIIT/3rd%20Year/First%20Semester/AF/Project/Repositories/UISamples/PharmacyModule/System/models/patients.new.js</file>
-            <file>file:/D:/SLIIT/3rd%20Year/First%20Semester/AF/Project/Repositories/UISamples/PharmacyModule/System/views/FrontRequests.html</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/controllers/PatientsController.js</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/main.js</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/app.js</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/models/stock.js</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/models/stock.mongoskin.js</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/controllers/StockController.js</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/views/MainStockTable.html</file>
+            <file>file:/C:/Users/VMARALA/Desktop/UISamples/PharmacyModule/System/views/FrontStock.html</file>
         </group>
     </open-files>
 </project-private>

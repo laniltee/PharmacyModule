@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 var mongoose = require('mongoose');
-mongoose.connect("localhost/pharmacy");
+mongoose.connect("mongodb://127.0.0.1:27017/pharmacy");
 
 var serverError = 500;
 var statusSuccess = 200;

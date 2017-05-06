@@ -48,9 +48,9 @@ app.config(function ($routeProvider, $locationProvider) {
                 templateUrl: "views/FrontRequests.html",
                 controller: "RequestsController"
             })
-            .when("/prescriptions", {
-                templateUrl: "views/Prescriptions.html",
-                controller: "PrescriptionsController"
+            .when("/front_patients", {
+                templateUrl: "views/Patients.html",
+                controller: "PatientsController"
             })
             .when("/prescriptions/add", {
                 templateUrl: "views/AddPrescription.html",

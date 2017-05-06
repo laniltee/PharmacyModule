@@ -1,5 +1,5 @@
 /* 
- * Database operations related to patients is compiled in this file
+ * Database operations related to stock is compiled in this file
  * See the description of each function for more information
  * Commited By Lanil On 12/03/2014
  */
@@ -11,9 +11,9 @@ var serverError = 500;
 var statusSuccess = 200;
 var statusDone = 201;
 
-//Returns all the patients in the database
-exports.getAllPatients = function (response) {
-    database.collection("patients").find().toArray(function (error, result) {
+//Returns all the stock in the database
+exports.getAllStocks = function (response) {
+    database.collection("stock").find().toArray(function (error, result) {
         if (error) {
             response.status(serverError);
             response.json(error);
@@ -25,8 +25,8 @@ exports.getAllPatients = function (response) {
 };
 
 //Returns the patient object which holds the given id
-exports.getPatient = function (patientIdIn, response) {
-    database.collection("patients").find({patientId: patientIdIn}).toArray(function (error, result) {
+exports.getStock = function (idIn, response) {
+    database.collection("stock").find({id: idIn}).toArray(function (error, result) {
         if (error) {
             response.status(serverError);
             response.json(error);
@@ -38,9 +38,9 @@ exports.getPatient = function (patientIdIn, response) {
 };
 
 //Adds new patient to the database
-exports.addPatient = function (request, response) {
+exports.addStock = function (request, response) {
 
-    database.collection("patients").insert(request.body, function (error, result) {
+    database.collection("stock").insert(request, function (error, result) {
         if (error) {
             response.status(serverError);
             response.json(error);
@@ -53,8 +53,8 @@ exports.addPatient = function (request, response) {
     });
 };
 
-exports.deletePatient = function (pId, response) {
-    database.collection('patients').remove({patientId: pId}, function (error, result) {
+exports.deleteStock = function (pId, response) {
+    database.collection('stock').remove({id: pId}, function (error, result) {
         if (!error) {
             response.status(200);
             response.end();

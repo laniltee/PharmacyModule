@@ -31,41 +31,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="#stock/D656561216">D656561216</td>
-                            <td>Panadol</td>
-                            <td>Paracetemol</td>
-                            <td>Tablet</td>
-                            <td>965</td>
+                        <tr ng-repeat="drug in allStock">
+                            <td><a href="#stock/{{drug.id}}">{{drug.id}}</td>
+                            <td>{{drug.name}}</td>
+                            <td>{{drug.category}}</td>
+                            <td>{{drug.unit}}</td>
+                            <td>-</td>
                             <td>
-                                <a href="#stock/D656561216/add" class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</a>
-                                <a href="#stock/D656561216/edit" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i>  Edit</a>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Remove</button>
-                                <a href="#stock/D656561216/order" class="btn btn-xs btn-primary"><i class="fa  fa-cart-plus"></i>  Order</a>
-                            </td>
-                        <tr>
-                            <td><a href="#stock/D656561216">D656561216</td>
-                            <td>Panadol</td>
-                            <td>Paracetemol</td>
-                            <td>Tablet</td>
-                            <td>965</td>
-                            <td>
-                                <a href="#stock/D656561216/add" class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</a>
-                                <a href="#stock/D656561216/edit" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i>  Edit</a>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Remove</button>
-                                <a href="#stock/D656561216/order" class="btn btn-xs btn-primary"><i class="fa  fa-cart-plus"></i>  Order</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#stock/D656561216">D656561216</td>
-                            <td>Panadol</td>
-                            <td>Paracetemol</td>
-                            <td>Tablet</td>
-                            <td>965</td>
-                            <td>
-                                <button class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</button>
-                                <button class="btn btn-xs btn-info"><i class="fa fa-pencil"></i>  Edit</button>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Remove</button>
+                                <a href="#stock/{{drug.id}}/add" class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</a>
+                                <a href="#stock/{{drug.id}}/edit" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i>  Edit</a>
+                                <button ng-click="removeStock(drug.id)" class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Remove</button>
+                                <a href="#stock/{{drug.id}}/order" class="btn btn-xs btn-primary"><i class="fa  fa-cart-plus"></i>  Order</a>
                             </td>
                         </tr>
                     </tbody>

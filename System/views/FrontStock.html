@@ -31,36 +31,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="#stock/D656561216">D656561216</td>
-                            <td>Panadol</td>
-                            <td>Paracetemol</td>
-                            <td>Tablet</td>
-                            <td>965</td>
+                        <tr ng-repeat="drug in allStock">
+                            <td><a href="#stock/{{drug.id}}">{{drug.id}}</td>
+                            <td>{{drug.name}}</td>
+                            <td>{{drug.category}}</td>
+                            <td>{{drug.unit}}</td>
+                            <td>-</td>
                             <td>
                                 <input type="text" name="q" class="form-control input-sm" placeholder="Enter Quantity">
-                                <a href="#stock/D656561216/edit" class="btn btn-sm btn-info"><i class="fa fa-support"></i>  Request</a>
-                            </td>
-                        <tr>
-                            <td><a href="#stock/D656561216">D656561216</td>
-                            <td>Panadol</td>
-                            <td>Paracetemol</td>
-                            <td>Tablet</td>
-                            <td>965</td>
-                            <td>
-                                <input type="text" name="q" class="form-control input-sm" placeholder="Enter Quantity">
-                                <a href="#stock/D656561216/edit" class="btn btn-sm btn-info"><i class="fa fa-support"></i>  Request</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="#stock/D656561216">D656561216</td>
-                            <td>Panadol</td>
-                            <td>Paracetemol</td>
-                            <td>Tablet</td>
-                            <td>965</td>
-                            <td>
-                                <input type="text" name="q" class="form-control input-sm" placeholder="Enter Quantity">
-                                <a href="#stock/D656561216/edit" class="btn btn-sm btn-info"><i class="fa fa-support"></i>  Request</a>
+                                <a href="" ng-click="sendRequest(drug.id)" class="btn btn-sm btn-info"><i class="fa fa-support"></i>  Request</a>
                             </td>
                         </tr>
                     </tbody>

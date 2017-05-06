@@ -14,9 +14,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 //---------------------Loading Models---------------------
-//var patients = require('./models/patients');
-//var users = require('./models/users.new');
-
+var patients = require('./models/patients');
+var users = require('./models/users.new');
+var stock = require('./models/stock.mongoskin');
 
 
 
@@ -146,4 +146,24 @@ app.delete('/users/:userId', function (request, response) {
 
 app.put('/users/:userId', function (request, response) {
     users.updateUser(request.params.userId, request.body, response);
+});
+
+//Deletes a patient
+app.delete('/patients/:pId', function(request, response){
+    patients.deletePatient(request.params.pId, response);
+});
+
+//Returns all stock
+app.get('/stock', function (request, response) {
+    stock.getAllStocks(response);
+});
+
+//Add new stock
+app.post('/stock', function (request, response) {
+    stock.addStock(request.body, response);
+});
+
+//Deletes a stock
+app.delete('/stock/:sId', function(request, response){
+    stock.deleteStock(request.params.sId, response);
 });
