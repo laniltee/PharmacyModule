@@ -1,0 +1,25 @@
+{ 
+    "_id" : ObjectId("58c4d206995df68e48e430d5"), 
+    "prescriptionId" : 10.0, 
+    "patientId" : 456234.0, 
+    "createdDate" : "2016-02-15", 
+    "prescriptionDate" : "2016-02-10", 
+    "drugIds" : [
+
+    ], 
+    "drugNames" : [
+
+    ], 
+    "frequencies" : [
+
+    ], 
+    "periods" : [
+
+    ], 
+    "dosages" : [
+
+    ], 
+    "quantitites" : [
+
+    ]
+}

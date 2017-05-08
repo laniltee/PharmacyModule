@@ -1,53 +1,20 @@
 { 
-    "_id" : ObjectId("58d3c389296af993548654fa"), 
-    "stockId" : "D1265489784", 
-    "name" : "Panadol", 
+    "_id" : ObjectId("590e0e51efce1f15b096c408"), 
+    "id" : "D3563563563", 
+    "name" : "Paracetemol", 
+    "category" : "Category 1", 
+    "unit" : "Tablet", 
+    "containerA" : "Level 1 Box", 
+    "containerB" : "Level 2 Box", 
+    "containerC" : "Card"
+}
+{ 
+    "_id" : ObjectId("590e145f2577b0047438d241"), 
+    "id" : "D1494094943987", 
+    "name" : "DRUG 2", 
+    "category" : "Cat 1", 
     "unit" : "Tablets", 
-    "category" : "General", 
-    "supplier" : "SPC", 
-    "supplierEmail" : "sales@spc.lk", 
-    "orders" : [
-        {
-            "date" : "2016-05-01", 
-            "quantity" : 45.0, 
-            "container" : "Box", 
-            "by" : "sahan"
-        }
-    ], 
-    "reorderingLevel" : 25.0, 
-    "warningLevel" : 10.0, 
-    "comments" : "None", 
-    "containers" : {
-        "levelOne" : "Box", 
-        "levelOneUnits" : 400.0, 
-        "levelTwo" : "Small Box", 
-        "levelTwoUnits" : 60.0, 
-        "levelThree" : "Cards", 
-        "levelThreeUnits" : 12.0
-    }, 
-    "batches" : [
-        {
-            "batchId" : "B4887987", 
-            "received" : "2016-05-12", 
-            "expiring" : "2016-08-12", 
-            "buyingPrice" : 15.0, 
-            "sellingPrice" : 32.0, 
-            "creceivedItems" : {
-                "levelOne" : 23.0, 
-                "levelTwo" : 23.0, 
-                "levelThree" : 12.0
-            }, 
-            "manufactured" : "2016-01-11"
-        }
-    ], 
-    "requests" : [
-        {
-            "id" : "R66565", 
-            "by" : "Sahan", 
-            "orderedUnits" : 245.0, 
-            "status" : "Pending", 
-            "date" : "2016-05-15", 
-            "approvedQ" : 200.0
-        }
-    ]
+    "containerA" : "Level 1 Box", 
+    "containerB" : "Level 1 Box", 
+    "containerC" : "Level 1 Box"
 }

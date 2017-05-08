@@ -19,11 +19,11 @@ app.controller("StockController", function ($scope, $http, $window, $route) {
 
     $scope.checkVal = "Stock Controller";
     var jsonHeaderObject = {headers: {'Content-Type': 'application/json'}};
-    
+
     $scope.allStock = [];
-    
-    $http.get("/stock").then(function(response){
-       $scope.allStock = response.data; 
+
+    $http.get("/stock").then(function (response) {
+        $scope.allStock = response.data;
     });
 
     $scope.addStock = function () {
@@ -36,15 +36,15 @@ app.controller("StockController", function ($scope, $http, $window, $route) {
             "containerB": $scope.containerB,
             "containerC": $scope.containerC
         };
-        
-        $http.post("/stock", newStock, jsonHeaderObject).then(function(response){
+
+        $http.post("/stock", newStock, jsonHeaderObject).then(function (response) {
             alert("Adding stock success");
             $window.location.href = "#stock";
-        }, function(response){
+        }, function (response) {
             alert("Adding stock failed");
         });
     };
-    
+
     $scope.removeStock = function (sId) {
         if (confirm("Are you sure to delete this stock?") == true) {
             $http.delete("/stock/" + sId).then(function (response) {
