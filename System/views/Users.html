@@ -1,0 +1,123 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        User Management
+        <small>Information on users of the systems</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#stock"><i class="fa fa-users"></i>Users</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Current Users</h3>
+
+                    <div class="box-body">
+                        <table datatable="ng" id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Department</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="user in users">
+                                    <td id="username_td_{{user.username}}"><a href="">{{user.username}}</a></td>
+                                    <td id="name_td_{{user.username}}">{{user.name}}</td>
+                                    <td id="email_td_{{user.username}}">{{user.email}}</td>
+                                    <td id="type_td_{{user.username}}">{{user.type}}</td>
+                                    <td id="department_td_{{user.username}}">{{user.department}}</td>
+                                    <td>
+                                        <!--<button class="btn btn-xs btn-info" ng-click="editUser(user.username)"><i class="fa fa-pencil"></i>  Edit</button>-->
+                                        <button class="btn btn-xs btn-danger" ng-click="removeUser(user.username)"><i class="fa fa-close"></i>  Remove</button>
+                                    </td>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Department</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Default box -->
+        <div class="col-md-4">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">{{functionHeader}} User</h3>
+
+                    <div class="box-body">
+                        <!-- form start -->
+                        <form >
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="full_name">Full Name</label>
+                                    <div>
+                                        <input type="text" class="form-control" requried="requried" id="full_name" ng-model="full_name" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="username" class="control-label">Username</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" requried="requried" id="username" ng-model="username" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="control-label">Email</label>
+                                    <div class="">
+                                        <input type="email" class="form-control" requried="requried" id="email" ng-model="email"  placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Password</label>
+                                    <div class="">
+                                        <input type="password" class="form-control" requried="requried" id="password" ng-model="password" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user_type" class="control-label">Type</label>
+
+                                    <div class="">
+                                        <select class="form-control" requried="requried" id="user_type" ng-model="user_type">
+                                            <option value="Chief Pharmacist">Chief Pharmacist</option>
+                                            <option value="Assistant Pharmacist">Assistant Pharmacist</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="department" class="control-label">Department / Location</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" requried="requried" id="department" ng-model="department" placeholder="Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button ng-click="neglect()" class="btn btn-default">Cancel</button>
+                                <button ng-click="addUser()" class="btn btn-primary pull-right">{{functionHeader}}</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

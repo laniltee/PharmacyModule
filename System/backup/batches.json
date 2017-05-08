@@ -1,0 +1,13 @@
+{ 
+    "_id" : ObjectId("58c4e7af995df68e48e430d6"), 
+    "batchId" : 12.0, 
+    "drugId" : 10.0, 
+    "unitBuying" : 18.0, 
+    "unitSelling" : 24.0, 
+    "arrivalDate" : "2016-02-01", 
+    "expiryDate" : "2016-08-21", 
+    "levelOne" : 10.0, 
+    "levelTwo" : 0.0, 
+    "levelThree" : 0.0, 
+    "avialble" : 210.0
+}
