@@ -11,10 +11,10 @@ app.controller("LoginController", function ($scope, $http, $window) {
     
     $scope.sidebar = "includes/aside.html";
     
-    if(loggedUserType == "cp"){
+    if(loggedUserType == "cp" || loggedUserType == "Chief Pharmacist"){
         $scope.sidebar = "includes/aside.html";
     }
-    if(loggedUserType == "ap"){
+    if(loggedUserType == "ap" || loggedUserType == "Assistant Pharmacist"){
         $scope.sidebar = "includes/aside2.html";
     }
     

@@ -1,0 +1,14 @@
+{
+  "name": "af-online",
+  "version": "1.0.0",
+  "description": "AF Online Examination",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "sliit"
+  ],
+  "author": "it15019028 - L.T.Marasinghe",
+  "license": "ISC"
+}

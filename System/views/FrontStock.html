@@ -24,33 +24,27 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Category</th>
-                            <th>Unit</th>
-                            <th>Total Quantity</th>
-                            <th>Actions</th>
+                            <th>Unit Price</th>
+                            <th>Available</th>
+                            <th>Total Value</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr ng-repeat="drug in allStock">
-                            <td><a href="#stock/{{drug.id}}">{{drug.id}}</td>
+                            <td><a href="#stock/{{drug.id}}">{{'DR' + Date.now()}}</td>
                             <td>{{drug.name}}</td>
-                            <td>{{drug.category}}</td>
-                            <td>{{drug.unit}}</td>
-                            <td>-</td>
-                            <td>
-                                <input type="text" name="q" class="form-control input-sm" placeholder="Enter Quantity">
-                                <a href="" ng-click="sendRequest(drug.id)" class="btn btn-sm btn-info"><i class="fa fa-support"></i>  Request</a>
-                            </td>
+                            <td>{{drug.price}}</td>
+                            <td>{{drug.available}}</td>
+                            <td>{{drug.price * drug.available}}</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>ID</th>
+<th>ID</th>
                             <th>Name</th>
-                            <th>Category</th>
-                            <th>Unit</th>
-                            <th>Total Quantity</th>
-                            <th>Actions</th>
+                            <th>Unit Price</th>
+                            <th>Available</th>
+                            <th>Total Value</th>
                         </tr>
                     </tfoot>
                 </table>

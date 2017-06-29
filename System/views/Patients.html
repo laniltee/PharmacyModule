@@ -24,7 +24,7 @@
                                 <tr>
                                     <th>Patient ID</th>
                                     <th>Name</th>
-                                    <th>First Date</th>
+                                    <th>NIC / Mobile</th>
                                     <th>Age</th>
                                     <th>Prescriptions</th>
                                     <th>Actions</th>
@@ -37,7 +37,7 @@
                                     <td id="date_td_{{patient.patientId}}">{{patient.firstDate}}</td>
                                     <td id="age_td_{{patient.patientId}}">{{patient.age}}</td>
                                     <td id="type_td_{{patient.patientId}}">
-                                        <a href="#front_patients/{{patient.patientId}}/prescriptions" class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</a>
+                                        <!--<a href="#front_patients/{{patient.patientId}}/prescriptions" class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</a>-->
                                         <a href="#front_patients/{{patient.patientId}}/prescriptions" class="btn btn-xs btn-info"><i class="fa fa-list-alt"></i>  View</a>
                                     </td>
                                     <td>
@@ -49,7 +49,7 @@
                                 <tr>
                                     <th>Patient ID</th>
                                     <th>Name</th>
-                                    <th>First Date</th>
+                                    <th>NIC / Mobile</th>
                                     <th>Age</th>
                                     <th>Prescriptions</th>
                                     <th>Actions</th>
@@ -77,9 +77,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="patientname" class="control-label">First Date</label>
+                                    <label for="patientname" class="control-label">NIC / Mobile No.</label>
                                     <div class="">
-                                        <input type="date" class="form-control" requried="requried" id="first_date" ng-model="first_date" placeholder="Date">
+                                        <input type="text" class="form-control" requried="requried" id="first_date" ng-model="first_date" placeholder="NIC or Mobile No to Identify">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -91,8 +91,7 @@
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">
-                                <button ng-click="neglect()" class="btn btn-default">Cancel</button>
-                                <button ng-click="addPatient()" class="btn btn-primary pull-right">Add Patient</button>
+                                <button ng-click="addPatient()" ng-disabled="patient_name == '' || first_date == '' || patient_age == '' || isInvalidNumber(patient_age)" class="btn btn-primary pull-right">Add Patient</button>
                             </div>
                             <!-- /.box-footer -->
                         </form>
