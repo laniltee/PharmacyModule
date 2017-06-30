@@ -135,7 +135,7 @@ app.controller("PatientsController", function ($scope, $http, $route, $routePara
     $scope.releasePresc = function(preId){
         if(confirm("Dispense prescription ?") == true){
             $http.post(dispensionService + "api/dispense/" + preId).then(function(response){
-                alert("Prescription deleted !");
+                alert("Prescription dispensed !");
                 getMyPrescriptions();
             });
         }

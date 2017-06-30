@@ -28,7 +28,7 @@ public class Controller {
         prescriptions reqPresc = pr.getByPreId(id);
         List<presc_items> allItems = ir.getByPreId(id);
 
-        System.out.println("Req: " + id);
+        System.out.println("Request Received For: " + id);
 
         int total = 0;
 
@@ -38,10 +38,15 @@ public class Controller {
 
             total += currentItem.getTotalPrice();
 
-            System.out.println("Current Total: " + currentItem.getTotalPrice());            
+            System.out.println("Total For : " + currentItem.getDrug() + " Is: " + currentItem.getTotalPrice());
 
             items changingItem = sr.getByName(currentItem.getDrug());
+
+            System.out.println("Already Available: " + changingItem.getAvailable());
+
             changingItem.setAvailable(changingItem.getAvailable() - currentItem.getQuantity());
+
+            System.out.println("Now Available: " + changingItem.getAvailable());
 
             sr.deleteByName(currentItem.getDrug());
             sr.save(changingItem);
