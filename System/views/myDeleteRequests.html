@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../public/main.css">
+
+    <script>
+        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+                (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+            r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+    <script src="../public/angular.js"></script>
+
+    <script src="../controllers/controller.js"></script>
+
+
+</head>
+<body ng-app="myApp">
+
+<!-- Add your site or application content here -->
+<div class="header">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div ng-controller="myCtrl">
+                <table border = "0">
+                    <tr>
+                        <th>RequestID</th>
+                        <th>Drug</th>
+                        <th>Date</th>
+                        <th>Unit</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr ng-repeat = "request in requests">
+                        <td>{{ request.requestID }}</td>
+                        <td>{{ request.drug }}</td>
+                        <td>{{ request.date}}</td>
+                        <td>{{ request.amount }}</td>
+                        <td>{{ request.status }}</td>
+
+                        <td><button ng-click="deleteRequest(request.requestID)" ng-disabled="request.status != 'pending'">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th>RequestID</th>
+                        <th>Drug</th>
+                        <th>Date</th>
+                        <th>Unit</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span>Developed by Thisura Thejith</p>
+    </div>
+</div>
+
+
+</body>
+</html>
