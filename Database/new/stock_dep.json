@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("590e0e51efce1f15b096c408"), 
+    "id" : "D3563563563", 
+    "name" : "Paracetemol", 
+    "category" : "Category 1", 
+    "unit" : "Tablet", 
+    "containerA" : "Level 1 Box", 
+    "containerB" : "Level 2 Box", 
+    "containerC" : "Card"
+}
+{ 
+    "_id" : ObjectId("590e145f2577b0047438d241"), 
+    "id" : "D1494094943987", 
+    "name" : "DRUG 2", 
+    "category" : "Cat 1", 
+    "unit" : "Tablets", 
+    "containerA" : "Level 1 Box", 
+    "containerB" : "Level 1 Box", 
+    "containerC" : "Level 1 Box"
+}
+{ 
+    "_id" : ObjectId("59159d11d3865108b46cfe1e"), 
+    "id" : "D1494588689223", 
+    "name" : "a", 
+    "category" : "Cat 2", 
+    "unit" : "Capsule", 
+    "containerA" : "Level 1 Box", 
+    "containerB" : "Level 2 Box", 
+    "containerC" : "Level 3 Box"
+}

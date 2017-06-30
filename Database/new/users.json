@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("58dcef3352dc4c3018c614ea"), 
+    "username" : "nisha", 
+    "name" : "Nisha Hewage", 
+    "password" : "sdsd", 
+    "email" : "nisha.hewage@gmail.com", 
+    "type" : "Assistant Pharmacist", 
+    "department" : "Main Store", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58de819b66aeb20a74aaa097"), 
+    "username" : "ananda", 
+    "name" : "Ananda Abeynayake", 
+    "password" : "sdfs", 
+    "email" : "anandaabe@gmail.com", 
+    "type" : "Assistant Pharmacist", 
+    "department" : "Front Pharmacy", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("58de81bb66aeb20a74aaa098"), 
+    "username" : "sarath", 
+    "name" : "Sarath", 
+    "password" : "sads", 
+    "email" : "sarath.jaye@gmail.com", 
+    "type" : "Assistant Pharmacist", 
+    "department" : "Main Store", 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,43 @@
+{ 
+    "_id" : ObjectId("58d3ef0b8ff32918d41fccdb"), 
+    "patientId" : "P324234", 
+    "age" : 34.0, 
+    "firstDate" : "2015-09-02", 
+    "name" : "Sarath"
+}
+{ 
+    "_id" : ObjectId("58d3f2278ff32918d41fccdc"), 
+    "patientId" : "P32423489", 
+    "name" : "Ajith", 
+    "age" : 56.0, 
+    "firstDate" : "2015-09-02"
+}
+{ 
+    "_id" : ObjectId("590773e2b6200b13e0d53795"), 
+    "patientId" : "P1493660642158", 
+    "age" : "26", 
+    "name" : "Jayantha Hewawithane", 
+    "firstDate" : "2017-01-30"
+}
+{ 
+    "_id" : ObjectId("590773f7b6200b13e0d53796"), 
+    "patientId" : "P1493660663274", 
+    "age" : "67", 
+    "name" : "Sarath Kularathne", 
+    "firstDate" : "2017-01-01"
+}
+{ 
+    "_id" : ObjectId("59077411b6200b13e0d53797"), 
+    "patientId" : "P1493660689732", 
+    "age" : "56", 
+    "name" : "Shirantha Rathnasiri", 
+    "firstDate" : "2016-12-31"
+}
+{ 
+    "_id" : ObjectId("59527f78a036eb1ce804200d"), 
+    "patientId" : "P1498578808520", 
+    "age" : NumberInt(23), 
+    "name" : "harshana", 
+    "firstDate" : "0714512651", 
+    "__v" : NumberInt(0)
+}

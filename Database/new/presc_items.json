@@ -1,0 +1,162 @@
+{ 
+    "_id" : ObjectId("5953c92ebb219412780a3889"), 
+    "preId" : "PRE1498662930566", 
+    "drug" : "Panadol", 
+    "dosage" : "250mg Pill", 
+    "quantity" : 25.0, 
+    "unitPrice" : 2.0, 
+    "totalPrice" : 50.0
+}
+{ 
+    "_id" : ObjectId("5953d0d2adfef30b248ebdb4"), 
+    "preId" : "PRE1498662930566", 
+    "unitPrice" : NumberInt(0), 
+    "totalPrice" : NumberInt(0), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5953d300adfef30b248ebdb5"), 
+    "preId" : "PRE1498662930566", 
+    "drug" : "Piriton Red", 
+    "dosage" : "50mg", 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5953d30badfef30b248ebdb6"), 
+    "preId" : "PRE1498581960975", 
+    "drug" : "Piriton Red", 
+    "dosage" : "50mg", 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5953d31cadfef30b248ebdb7"), 
+    "preId" : "PRE1498662930566", 
+    "drug" : "Piriton Red", 
+    "dosage" : "50mg", 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5953d480adfef30b248ebdb8"), 
+    "preId" : "PRE1498581960975", 
+    "drug" : "jkjkk", 
+    "dosage" : "50mg", 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5953d4e2002d342fb0325223"), 
+    "preId" : "PRE1498581521072", 
+    "drug" : "TestDrug", 
+    "dosage" : "50mg", 
+    "quantity" : NumberInt(56), 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5953d632002d342fb0325224"), 
+    "preId" : "PRE1498581521072", 
+    "drug" : "TestDrug2", 
+    "dosage" : "250mg", 
+    "quantity" : NumberInt(2), 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5955143da484081c5c1214c1"), 
+    "preId" : "PRE1498581960975", 
+    "drug" : "kjjkj", 
+    "dosage" : "50mg", 
+    "quantity" : NumberInt(5), 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("595528e1bd3e22352c2bfa1c"), 
+    "preId" : "PRE1498581960975", 
+    "drug" : "Amoxillin", 
+    "dosage" : "500mg", 
+    "quantity" : NumberInt(56), 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59552ab0bd3e22352c2bfa1d"), 
+    "preId" : "PRE1498581960975", 
+    "drug" : "Sample Drug", 
+    "dosage" : "250mg", 
+    "quantity" : NumberInt(10), 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59552b06bd3e22352c2bfa1e"), 
+    "preId" : "PRE1498581521072", 
+    "drug" : "Sample Drug", 
+    "dosage" : "50mg", 
+    "quantity" : NumberInt(260), 
+    "unitPrice" : NumberInt(5), 
+    "totalPrice" : NumberInt(50), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59552c64bd3e22352c2bfa20"), 
+    "preId" : "PRE1498753953128", 
+    "drug" : "Paracetomol", 
+    "dosage" : "250mg", 
+    "quantity" : NumberInt(50), 
+    "unitPrice" : NumberInt(4), 
+    "totalPrice" : NumberInt(200), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59552cb4bd3e22352c2bfa21"), 
+    "preId" : "PRE1498753953128", 
+    "drug" : "Aspirin", 
+    "dosage" : "50mg", 
+    "quantity" : NumberInt(20), 
+    "unitPrice" : NumberInt(12), 
+    "totalPrice" : NumberInt(240), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59552cc0bd3e22352c2bfa22"), 
+    "preId" : "PRE1498753953128", 
+    "drug" : "Sample Drug", 
+    "dosage" : "250mg", 
+    "quantity" : NumberInt(15), 
+    "unitPrice" : NumberInt(40), 
+    "totalPrice" : NumberInt(600), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5955465ae59fc723d8e7a236"), 
+    "preId" : "PRE1498582179655", 
+    "drug" : "Amoxillin", 
+    "dosage" : "50mg", 
+    "quantity" : NumberInt(12), 
+    "unitPrice" : NumberInt(12), 
+    "totalPrice" : NumberInt(144), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5955467ce59fc723d8e7a237"), 
+    "preId" : "PRE1498582179655", 
+    "drug" : "Sample Drug", 
+    "dosage" : "50mg", 
+    "quantity" : NumberInt(65), 
+    "unitPrice" : NumberInt(40), 
+    "totalPrice" : NumberInt(2600), 
+    "__v" : NumberInt(0)
+}

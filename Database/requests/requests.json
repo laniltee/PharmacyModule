@@ -1,0 +1,50 @@
+{ 
+    "_id" : ObjectId("59555ed3ec388809ad9143bb"), 
+    "userID" : "AP1", 
+    "requestID" : "REQ38874643", 
+    "drug" : "Panadol", 
+    "date" : "2017-05-30", 
+    "amount" : 500.0, 
+    "department" : "D1", 
+    "status" : "pending"
+}
+{ 
+    "_id" : ObjectId("59555ed3ec388809ad9143bc"), 
+    "userID" : "AP2", 
+    "requestID" : "REQ3887464", 
+    "drug" : "Syrup", 
+    "date" : "2017-04-15", 
+    "amount" : 600.0, 
+    "department" : "D2", 
+    "status" : "pending"
+}
+{ 
+    "_id" : ObjectId("59555ed3ec388809ad9143bd"), 
+    "userID" : "AP3", 
+    "requestID" : "REQ3887465", 
+    "drug" : "Aspirin", 
+    "date" : "2017-05-10", 
+    "amount" : 400.0, 
+    "department" : "D3", 
+    "status" : "pending"
+}
+{ 
+    "_id" : ObjectId("59555ed3ec388809ad9143be"), 
+    "userID" : "AP1", 
+    "requestID" : "REQ3887465767", 
+    "drug" : "Panadene", 
+    "date" : "2017-05-11", 
+    "amount" : 450.0, 
+    "department" : "D3", 
+    "status" : "pending"
+}
+{ 
+    "_id" : ObjectId("59555ed5ec388809ad9143bf"), 
+    "userID" : "AP1", 
+    "requestID" : "REQ38874659877", 
+    "drug" : "Quinin", 
+    "date" : "2017-05-12", 
+    "amount" : 500.0, 
+    "department" : "D3", 
+    "status" : "pending"
+}
