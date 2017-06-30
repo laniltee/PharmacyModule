@@ -1,0 +1,35 @@
+{ 
+    "_id" : ObjectId("59528a1107e7013974249ee9"), 
+    "preId" : "PRE1498581521072", 
+    "createdDate" : "2017-06-27T16:38:41.072Z", 
+    "total" : NumberInt(0), 
+    "patient" : "P1493660663274", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59528bc807e7013974249eea"), 
+    "preId" : "PRE1498581960975", 
+    "createdDate" : "2017-06-27T16:46:00.975Z", 
+    "doctor" : "Healan", 
+    "total" : NumberInt(0), 
+    "patient" : "P1493660663274", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59528ca307e7013974249eeb"), 
+    "preId" : "PRE1498582179655", 
+    "createdDate" : "2017-06-27T16:49:39.655Z", 
+    "doctor" : "Seth Sevana", 
+    "total" : NumberInt(0), 
+    "patient" : "P324234", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("59552ba1bd3e22352c2bfa1f"), 
+    "preId" : "PRE1498753953128", 
+    "createdDate" : "2017-06-29T16:32:33.128Z", 
+    "doctor" : "Nawa Rohala", 
+    "total" : NumberInt(50), 
+    "patient" : "P1493660663274", 
+    "__v" : NumberInt(0)
+}

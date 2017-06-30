@@ -1,0 +1,40 @@
+{ 
+    "_id" : ObjectId("59555f06ec388809ad9143c0"), 
+    "userID" : "AP1", 
+    "stockID" : "STC837632", 
+    "department" : "D1", 
+    "drug" : "Panadol", 
+    "category" : "Paracetemol", 
+    "unit" : "Tablet", 
+    "totalQty" : 550.0
+}
+{ 
+    "_id" : ObjectId("59555f06ec388809ad9143c1"), 
+    "userID" : "AP1", 
+    "stockID" : "STC837634", 
+    "department" : "D3", 
+    "drug" : "Aspirin", 
+    "category" : "PainKiller", 
+    "unit" : "Tablet", 
+    "totalQty" : 800.0
+}
+{ 
+    "_id" : ObjectId("59555f06ec388809ad9143c2"), 
+    "userID" : "AP2", 
+    "stockID" : "STC837343", 
+    "department" : "D2", 
+    "drug" : "Dispirin", 
+    "category" : "PainKiller", 
+    "unit" : "Tablet", 
+    "totalQty" : 300.0
+}
+{ 
+    "_id" : ObjectId("59555f09ec388809ad9143c3"), 
+    "userID" : "AP3", 
+    "stockID" : "STC837989", 
+    "department" : "D4", 
+    "drug" : "Eno", 
+    "category" : "PainKiller", 
+    "unit" : "Packet", 
+    "totalQty" : 400.0
+}

@@ -1,0 +1,26 @@
+{ 
+    "_id" : ObjectId("58c4e7b2995df68e48e430d7"), 
+    "drugId" : 100.0, 
+    "supplierName" : "supp@gmail.com", 
+    "supplierEmail" : "Supplier", 
+    "drugName" : "Panadol", 
+    "category" : "Cat", 
+    "type" : "-", 
+    "rol" : 45.0, 
+    "dangerLevel" : 25.0, 
+    "remarks" : "N/A", 
+    "quantity" : 190.0, 
+    "unit" : "Tablets", 
+    "levelOneStorage" : {
+        "type" : "Box", 
+        "units" : 500.0
+    }, 
+    "levelTwoStorage" : {
+        "type" : "Small Box", 
+        "units" : 250.0
+    }, 
+    "levelThreeStorage" : {
+        "type" : "Card", 
+        "units" : 12.0
+    }
+}

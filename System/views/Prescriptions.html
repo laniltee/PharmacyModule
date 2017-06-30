@@ -1,0 +1,165 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Prescriptions Information
+        <small>Detailed information of prescriptions owned by a patient</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#front_patients"><i class="fa fa-ambulance"></i>Patients</a></li>
+        <li><a href="#front_patients"><i class="fa fa-file-text-o"></i>Prescriptions</a></li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Previous Prescriptions</h3>
+
+                    <div class="box-body">
+                        <table datatable="ng" id="example1" class="table table-bordered table-striped">
+                            <thead>
+                             <tr>
+                                <th>Prescription ID</th>
+                                <th>Date</th>
+                                <th>Doctor</th>
+                                <th>Drugs</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="presc in prescriptions" ng-class="presc.total == 0 ? 'warning'">
+
+                                <td>{{presc.preId}}</td>
+                                <td>{{presc.createdDate | limitTo: 10}}</td>
+                                <td>{{presc.doctor}}</td>
+                                <td>
+                                    <!--<a href="#front_patients/{{patient.patientId}}/prescriptions" class="btn btn-xs btn-success"><i class="fa fa-plus"></i>  Add</a>-->
+                                    <button class="btn btn-xs btn-info" ng-click="viewDrugs(presc.preId)"><i class="fa fa-list-alt"></i>  View </button>
+                                </td>
+                                <td>{{presc.total}}</td>
+                                <td>
+                                    <!--<button class="btn btn-xs btn-info" ng-click="editUser(patient.patientname)"><i class="fa fa-pencil"></i>  Edit</button>-->
+                                    <button class="btn btn-xs btn-danger"  ng-click="deletePresc(presc.preId)"><i class="fa fa-close"></i>  Remove</button>
+                                    <button class="btn btn-xs btn-success"  ng-click="releasePresc(presc.preId)"><i class="fa fa-long-arrow-down"></i>  Dispense</button>
+                                </td>
+                                <td><span class="label label-{{presc.total == 0 ? 'warning' : 'primary'}}">{{presc.total == 0 ? 'Pending' : 'Dispensed'}}</span></td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Default box -->
+        <div class="col-md-3">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Add New Prescription</h3>
+
+                    <div class="box-body">
+                        <!-- form start -->
+                        <form >
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="patientname" class="control-label">Doctor / Hospital</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" requried="requried" id="presc_doc" ng-model="presc_doc" placeholder="Doctor's Name or Hospital Name to Identify">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button ng-click="addPrescription()" ng-disabled="presc_doc == '' || presc_doc == null" class="btn btn-primary pull-right">Add Prescription</button>
+                            </div>
+                            <!-- /.box-footer -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Prescription Content-->
+    <div class="row" >
+        <div class="col-md-12">
+            <div class="box box-success">
+                <div class="box-header with-border">
+
+                    <h3 class="box-title">Prescription Content of {{currentPresc}}</h3>
+                    <br>
+                    <br>
+                    <div class="row" style="padding-right: 10px;padding-left: 10px">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="patientname" class="control-label">Add Drugs</label>
+                                <div class="">
+                                  <input type="text" class="form-control" requried="requried" ng-model="drug_name" ng-change="changeDrug()" placeholder="Enter drug name">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="patientname" class="control-label">Select Dosage</label>
+                            <div class="">
+                                <select class="form-control" ng-model="drug_dose">
+                                    <option value="50mg">50mg</option>
+                                    <option value="250mg">250mg</option>
+                                    <option value="500mg">500mg</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="patientname" class="control-label">Enter Quantity</label>
+                            <div class="">
+                                <input type="text" class="form-control" requried="requried" ng-model="drug_count" placeholder="Quantity">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="patientname" class="control-label">&nbsp</label>
+                            <div class="">
+                                <button type="button" ng-disabled="currentPresc == '' || drug_dose == null || isInvalidNumber(drug_count) || drug_name == '' || !currentDrug.name || drug_count == '' || currentDrug.available < drug_count" ng-click="addDrugToPresc()" class="btn btn-block btn-success">Add Drug</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" style="padding-left: 15px">
+                    <button ng-repeat="drug in searchDrugs" ng-click="selectDrug(drug.name)" type="button" class="btn bg-olive btn-flat margin">{{drug.name}}</button>
+                </div>
+                <div class="box-body">
+                    <table datatable="ng" id="example1" class="table table-bordered table-striped">
+                        <thead>
+                         <tr>
+                            <th>Drug</th>
+                            <th>Doze</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in prescItems">
+
+                            <td>{{item.drug}}</td>
+                            <td>{{item.dosage}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.unitPrice}}</td>
+                            <td>{{item.totalPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>

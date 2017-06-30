@@ -24,39 +24,43 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
+                            <th>Unit </th>
                             <th>Category</th>
-                            <th>Unit</th>
                             <th>Total Quantity</th>
-                            <th>Actions</th>
+                            <th>Request</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="drug in allStock">
-                            <td><a href="#stock/{{drug.id}}">{{drug.id}}</td>
-                            <td>{{drug.name}}</td>
-                            <td>{{drug.category}}</td>
+                        <tr ng-repeat="drug in stocks">
+                            <td><a href="#stock/{{drug.stockID}}">{{drug.stockID}}</td>
+                            <td id="name_{{drug.stockID}}">{{drug.drug}}</td>
                             <td>{{drug.unit}}</td>
-                            <td>-</td>
+                            <td>{{drug.category}}</td>
+                            <td>{{drug.totalQty}}</td>
                             <td>
-                                <input type="text" name="q" class="form-control input-sm" placeholder="Enter Quantity">
-                                <a href="" ng-click="sendRequest(drug.id)" class="btn btn-sm btn-info"><i class="fa fa-support"></i>  Request</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Unit</th>
-                            <th>Total Quantity</th>
-                            <th>Actions</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" id="q_{{drug.stockID}}" class="form-control" >
+                                    <span class="input-group-btn">
+                                    <button type="button" ng-click="addRequest(drug.stockID, 'x')" class="btn btn-info btn-flat">Request</button>
+                                  </span>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Unit </th>
+                        <th>Category</th>
+                        <th>Total Quantity</th>
+                        <th>Request</th>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-        <!-- /.box -->
     </div>
+    <!-- /.box -->
+</div>
 </section>
 <!-- /.content -->
