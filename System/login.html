@@ -101,16 +101,21 @@
     			};
     			console.log(loginRequest);
 
-    			$http.post(loginServiceUrl, loginRequest).then(function(response){
-    				sessionStorage.setItem("username", response.data.username);
-    				sessionStorage.setItem("usertype", response.data.type);
-    				$window.location.href = "/";
-    				alert("You Have Succesfully Logged In !");
-    			}, function(response){
-    				alert("You Have Entered An Invalid Username OR Password");
-    			}).finally(function(){
+    			// $http.post(loginServiceUrl, loginRequest).then(function(response){
+    			// 	sessionStorage.setItem("username", response.data.username);
+    			// 	sessionStorage.setItem("usertype", response.data.type);
+    			// 	$window.location.href = "/";
+    			// 	alert("You Have Succesfully Logged In !");
+    			// }, function(response){
+    			// 	alert("You Have Entered An Invalid Username OR Password");
+    			// }).finally(function(){
 
-    			});
+    			// });
+
+                sessionStorage.setItem("username", "sarath");
+                    sessionStorage.setItem("usertype", "ap");
+                    $window.location.href = "/";
+                    alert("You Have Succesfully Logged In !");
     		}
     	});
 

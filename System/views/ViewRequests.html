@@ -23,58 +23,36 @@
                             <th>Request ID</th>
                             <th>Drug</th>
                             <th>Date</th>
-                            <th>Unit</th>
+                            <th>Quantity</th>
                             <th>By</th>
                             <th>Department</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>R9895652</td>
-                            <td>Panadol</td>
-                            <td>2016-05-23</td>
-                            <td>652</td>
-                            <td>Nisha</td>
-                            <td>Front Pharmacy</td>
+                        <tr ng-repeat="req in allReqs">
+                            <td>{{req.requestID}}</td>
+                            <td>{{req.drug}}</td>
+                            <td>{{req.date}}</td>
+                            <td>{{req.amount}}</td>
+                            <td>{{req.userID}}</td>
+                            <td>{{req.department}}</td>
+                            <td><span class="label label-{{req.status == 'pending'? 'warning' : 'primary'}}">{{req.status == 'pending' ? 'Pending' : req.status}}</span></td>
                             <td>
-                                <button class="btn btn-xs btn-info"><i class="fa fa-check"></i>  Approve</button>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Reject</button>
+                                <button class="btn btn-xs btn-info" ng-click="approveRequest(req.requestID)"><i class="fa fa-check"></i>  Approve</button>
+                                <button class="btn btn-xs btn-danger" ng-click="rejectRequest(req.requestID)"><i class="fa fa-close"></i>  Reject</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>R9895652</td>
-                            <td>Panadol</td>
-                            <td>2016-05-23</td>
-                            <td>652</td>
-                            <td>Nisha</td>
-                            <td>Front Pharmacy</td>
-                            <td>
-                                <button class="btn btn-xs btn-info"><i class="fa fa-check"></i>  Approve</button>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Reject</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>R9895652</td>
-                            <td>Panadol</td>
-                            <td>2016-05-23</td>
-                            <td>652</td>
-                            <td>Nisha</td>
-                            <td>Front Pharmacy</td>
-                            <td>
-                                <button class="btn btn-xs btn-info"><i class="fa fa-check"></i>  Approve</button>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Reject</button>
-                            </td>
-                        </tr>
-
                     <tfoot>
                         <tr>
                             <th>Request ID</th>
                             <th>Drug</th>
                             <th>Date</th>
-                            <th>Unit</th>
+                            <th>Quantity</th>
                             <th>By</th>
                             <th>Department</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </tfoot>

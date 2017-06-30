@@ -30,6 +30,7 @@ app.listen(8086, function (error) {
 });
 
 //Get all requests
+//Integrated
 app.get("/requests",function (req,res) {
     console.log("[ROUTE CALLED][GET] /requests");
     requests.find(function (error,requests) {
@@ -43,6 +44,7 @@ app.get("/requests",function (req,res) {
 });
 
 //Get all stocks
+//Integrated
 app.get("/stocks",function (req,res) {
     console.log("[ROUTE CALLED][GET] /stocks");
     stocks.find(function (error,stocks) {
@@ -56,6 +58,7 @@ app.get("/stocks",function (req,res) {
 });
 
 //Find requests by userID
+//Integrated
 app.get("/requests/user/:userId",function (req,res) {
     var reqId=req.params.userId;
     console.log("[ROUTE CALLED][GET] /requests/" + reqId);
@@ -70,6 +73,7 @@ app.get("/requests/user/:userId",function (req,res) {
 });
 
 //Find requests by requestID
+//Depreceated
 app.get("/requests/:requestsId",function (req,res) {
     var reqId=req.params.requestsId;
     console.log("[ROUTE CALLED][GET] /requests/" + reqId);
@@ -84,6 +88,7 @@ app.get("/requests/:requestsId",function (req,res) {
 });
 
 //Find stocks by userID
+//Depreceated
 app.get("/stocks/:userId",function (req,res) {
     var reqId=req.params.userId;
     console.log("[ROUTE CALLED][GET] /stocks/" + reqId);
@@ -100,6 +105,7 @@ app.get("/stocks/:userId",function (req,res) {
 
 
 //Add new request
+//Integrated
 app.post("/requests",function (req,res) {
     console.log("[ROUTE CALLED][POST] /requests");
 
@@ -109,13 +115,16 @@ app.post("/requests",function (req,res) {
         if(error){
             console.log("[ERROR] ADDING A NEW REQUEST TO DATABASE FAILED");
             res.end();
-        }
-        console.log("[DB] ADDING A NEW REQUEST TO DATABASE SUCCESS");
+        }else{
+            console.log("[DB] ADDING A NEW REQUEST TO DATABASE SUCCESS");
         res.json(newRequest);
+        }
+        
     });
 });
 
 //Delete a request
+//Integrated
 app.delete("/requests/:id",function (req,res) {
 
     var delId = req.params.id;
@@ -133,6 +142,7 @@ app.delete("/requests/:id",function (req,res) {
 
 
 //update requests(Accept or Reject drug requests)
+//Integrated
 app.put("/requests/:requestsId",function (req,res) {
     var reqId = req.params.requestsId;
     console.log("[ROUTE CALLED][PUT] /requests/" + reqId);

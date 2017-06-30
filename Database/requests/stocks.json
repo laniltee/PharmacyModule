@@ -1,5 +1,5 @@
 { 
-    "_id" : ObjectId("59555f06ec388809ad9143c0"), 
+    "_id" : ObjectId("5955dc8be5afd7618f9d8525"), 
     "userID" : "AP1", 
     "stockID" : "STC837632", 
     "department" : "D1", 
@@ -9,7 +9,7 @@
     "totalQty" : 550.0
 }
 { 
-    "_id" : ObjectId("59555f06ec388809ad9143c1"), 
+    "_id" : ObjectId("5955dc8be5afd7618f9d8526"), 
     "userID" : "AP1", 
     "stockID" : "STC837634", 
     "department" : "D3", 
@@ -19,7 +19,7 @@
     "totalQty" : 800.0
 }
 { 
-    "_id" : ObjectId("59555f06ec388809ad9143c2"), 
+    "_id" : ObjectId("5955dc8be5afd7618f9d8527"), 
     "userID" : "AP2", 
     "stockID" : "STC837343", 
     "department" : "D2", 
@@ -29,7 +29,7 @@
     "totalQty" : 300.0
 }
 { 
-    "_id" : ObjectId("59555f09ec388809ad9143c3"), 
+    "_id" : ObjectId("5955dc8ce5afd7618f9d8528"), 
     "userID" : "AP3", 
     "stockID" : "STC837989", 
     "department" : "D4", 

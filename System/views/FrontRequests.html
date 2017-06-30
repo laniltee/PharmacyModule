@@ -23,48 +23,22 @@
                             <th>Request ID</th>
                             <th>Drug</th>
                             <th>Date</th>
-                            <th>Unit</th>
+                            <th>Amount</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>R9895652</td>
-                            <td>Panadol</td>
-                            <td>2016-05-23</td>
-                            <td>652</td>
+                        <tr ng-repeat="request in requests">
+                            <td>{{request.requestID}}</td>
+                            <td>{{request.drug}}</td>
+                            <td>{{request.date}}</td>
+                            <td>{{request.amount}}</td>
+                            <td><span class="label label-{{request.status == 'pending'? 'warning' : 'primary'}}">{{request.status == 'pending' ? 'Pending' : request.status}}</span></td>
                             <td>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Delete</button>
+                                <button ng-disabled="request.status != 'pending'" ng-click="deleteRequest(request.requestID)" class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Delete</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>R9895652</td>
-                            <td>Panadol</td>
-                            <td>2016-05-23</td>
-                            <td>652</td>
-                            <td>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>R9895652</td>
-                            <td>Panadol</td>
-                            <td>2016-05-23</td>
-                            <td>652</td>
-                            <td>
-                                <button class="btn btn-xs btn-danger"><i class="fa fa-close"></i>  Delete</button>
-                            </td>
-                        </tr>
-
-                    <tfoot>
-                        <tr>
-                            <th>Request ID</th>
-                            <th>Drug</th>
-                            <th>Date</th>
-                            <th>Unit</th>
-                            <th>Actions</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

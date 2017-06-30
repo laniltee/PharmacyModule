@@ -42,7 +42,7 @@ app.config(function ($routeProvider, $locationProvider) {
             })
             .when("/front_stock", {
                 templateUrl: "views/FrontStock.html",
-                controller: "PatientsController"
+                controller: "RequestsController"
             })
             .when("/front_requests", {
                 templateUrl: "views/FrontRequests.html",

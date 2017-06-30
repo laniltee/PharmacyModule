@@ -24,33 +24,43 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Unit Price</th>
-                            <th>Available</th>
-                            <th>Total Value</th>
+                            <th>Unit </th>
+                            <th>Category</th>
+                            <th>Total Quantity</th>
+                            <th>Request</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="drug in allStock">
-                            <td><a href="#stock/{{drug.id}}">{{'DR' + Date.now()}}</td>
-                            <td>{{drug.name}}</td>
-                            <td>{{drug.price}}</td>
-                            <td>{{drug.available}}</td>
-                            <td>{{drug.price * drug.available}}</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-<th>ID</th>
-                            <th>Name</th>
-                            <th>Unit Price</th>
-                            <th>Available</th>
-                            <th>Total Value</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+                        <tr ng-repeat="drug in stocks">
+                            <td><a href="#stock/{{drug.stockID}}">{{drug.stockID}}</td>
+                            <td id="name_{{drug.stockID}}">{{drug.drug}}</td>
+                            <td>{{drug.unit}}</td>
+                            <td>{{drug.category}}</td>
+                            <td>{{drug.totalQty}}</td>
+                            <td>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" id="q_{{drug.stockID}}" class="form-control" >
+                                    <span class="input-group-btn">
+                                    <button type="button" ng-click="addRequest(drug.stockID, 'x')" class="btn btn-info btn-flat">Request</button>
+                                  </span>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Unit </th>
+                        <th>Category</th>
+                        <th>Total Quantity</th>
+                        <th>Request</th>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
-        <!-- /.box -->
     </div>
+    <!-- /.box -->
+</div>
 </section>
 <!-- /.content -->
