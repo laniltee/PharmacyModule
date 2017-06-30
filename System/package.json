@@ -1,8 +1,22 @@
 {
-    "name": "NodeJsWebApplication",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "Lanil Marasinghe",
-    "contributors": ["Movinda Rupasinghe", "Supun Thennakon", "Thisura Phillips"],
-    "dependencies": {}
+  "name": "NodeJsWebApplication",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Lanil Marasinghe",
+  "contributors": [
+    "Movinda Rupasinghe",
+    "Supun Thennakon",
+    "Thisura Phillips"
+  ],
+  "dependencies": {
+    "cors": "^2.8.3",
+    "mongodb": "^2.2.29",
+    "mongoose": "^4.11.0"
+  }
 }

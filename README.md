@@ -13,3 +13,8 @@ Group Members
  -Stock Handling
  -Viewing Stock Reports
  -Order Level Notifications
+
+Run
+npm install cors --save
+npm install mongodb --save
+npm install mongoose --save

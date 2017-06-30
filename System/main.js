@@ -5,19 +5,29 @@
  */
 
 //---------------------ExpressJS Setup & Required Libraries---------------------
+//---------------------Loading Models---------------------
 var express = require('express');
 var app = express();
+var patients = require('./models/patients');
+var users = require('./models/users.new');
+var stock = require('./models/stock.mongoskin');
+var mongoose = require('mongoose');
+var cors = require('cors');
 
 var database = require('mongoskin').db('mongodb://localhost/sliit');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
+app.use(cors());
 
-//---------------------Loading Models---------------------
-var patients = require('./models/patients');
-var users = require('./models/users.new');
-var stock = require('./models/stock.mongoskin');
 
+
+//Database Connection
+mongoose.connect('mongodb://localhost/pharmacy_requests');
+
+//Database schemas for requests and stocks objects
+var requests = mongoose.model('requests',{userID: String, requestID: String, drug:String, date:String, amount:Number, department:String, status:String});
+var stocks = mongoose.model('stocks',{userID: String, stockID: String, department:String,drug:String, category:String, unit:String, totalQty:Number});
 
 
 
@@ -26,7 +36,7 @@ var stock = require('./models/stock.mongoskin');
 //---------------------Loading Models End---------------------\\
 
 //Server Startup
-app.listen(8080, function () {
+app.listen(8086, function () {
     console.log("\n +-+-+-+-+-+-+-+-+-+-+\n |c|o|d|e|S|h|a|r|k|s|\n +-+-+-+-+-+-+-+-+-+-+");
     console.log("  ____  _                                           \n" +
             " |  _ \\| |__   __ _ _ __ _ __ ___   __ _  ___ _   _ \n" +
