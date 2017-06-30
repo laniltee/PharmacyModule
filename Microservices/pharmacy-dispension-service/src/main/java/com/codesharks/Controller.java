@@ -3,6 +3,7 @@ package com.codesharks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -21,6 +22,9 @@ public class Controller {
 
     @Autowired
     private StockRepository sr;
+
+    @Autowired
+    private PatientsRepository patientsRepositoryr;
 
     @PostMapping(path = "/dispense/{id}")
     public @ResponseBody boolean getPrescriptionTotal(@PathVariable String id){
@@ -61,5 +65,48 @@ public class Controller {
 
 
         return true;
+    }
+
+    @GetMapping(path = "/sales")
+    public @ResponseBody int getTotalSales(){
+
+        int total = 0;
+
+        Iterable<prescriptions> allPrescs = pr.findAll();
+        Iterator<prescriptions> prescIterator = allPrescs.iterator();
+
+        while(prescIterator.hasNext()){
+            total += prescIterator.next().getTotal();
+        }
+
+        return total;
+    }
+
+    @GetMapping(path = "/stock")
+    public @ResponseBody int getTotalStock(){
+        int total = 0;
+
+        Iterable<items> allItems = sr.findAll();
+        Iterator<items> itemsIterator = allItems.iterator();
+
+        while(itemsIterator.hasNext()){
+            total += (itemsIterator.next().getPrice() * itemsIterator.next().getAvailable());
+        }
+
+        return total;
+    }
+
+    @GetMapping(path = "/patients")
+    public @ResponseBody int getPatientsCount(){
+        int count = 0;
+
+        Iterable<patients> allPats = patientsRepositoryr.findAll();
+        Iterator<patients> patientsIterator = allPats.iterator();
+
+        while (patientsIterator.hasNext()){
+            count++;
+        }
+
+        return count;
     }
 }
