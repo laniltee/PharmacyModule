@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //Database Connection
-mongoose.connect('mongodb://localhost/pharmacy_requests');
+mongoose.connect('mongodb://127.0.0.1/pharmacy_requests');
 
 //Database schemas for requests and stocks objects
 var requests = mongoose.model('requests',{userID: String, requestID: String, drug:String, date:String, amount:Number, department:String, status:String});

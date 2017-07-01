@@ -90,7 +90,8 @@ public class Controller {
         Iterator<items> itemsIterator = allItems.iterator();
 
         while(itemsIterator.hasNext()){
-            total += (itemsIterator.next().getPrice() * itemsIterator.next().getAvailable());
+            items temp = itemsIterator.next();
+            total = total + (temp.getPrice() * temp.getAvailable());
         }
 
         return total;
