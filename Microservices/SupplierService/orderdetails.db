@@ -1,0 +1,5 @@
+use supplier
+
+db.orderdetails.insert({"ID":"05", "date":"24 th Of June 2017","name":"Paracetamol", "suppliername":"sachin", "supplierID":"55C", "orderCatergory":"Catergory 1", "ContainerA":"Level 1 Box", "containerB":"Level 2 Box", "containerC":"Card","orderstatus":"Pending"})
+
+db.orderdetails.insert({"ID":"06", "date":"26 th Of June 2017","name":"Panadol", "suppliername":"Pharmacy Six", "supplierID":"22C", "orderCatergory":"Catergory 1", "ContainerA":"Level 1 Box", "containerB":"Level 2 Box", "containerC":"Card","orderstatus":"Received"})

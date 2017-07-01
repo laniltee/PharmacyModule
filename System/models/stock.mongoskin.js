@@ -26,7 +26,7 @@ exports.getAllStocks = function (response) {
 
 //Returns the patient object which holds the given id
 exports.getStock = function (idIn, response) {
-    database.collection("stock").find({id: idIn}).toArray(function (error, result) {
+    database.collection("stock").find({stockId: idIn}).toArray(function (error, result) {
         if (error) {
             response.status(serverError);
             response.json(error);
@@ -54,10 +54,11 @@ exports.addStock = function (request, response) {
 };
 
 exports.deleteStock = function (pId, response) {
-    database.collection('stock').remove({id: pId}, function (error, result) {
+    database.collection('stock').remove({stockId: pId}, function (error, result) {
         if (!error) {
             response.status(200);
             response.end();
+            console.log("deleted " + pId);
         } else {
             response.status(serverError);
             response.json(error);

@@ -152,7 +152,7 @@ app.put("/requests/:requestsId",function (req,res) {
             res.end();
         }
         requests.status = req.body.status;
-        requests.save(function (error,department) {
+        requests.save(function (error,requests) {
             if(error){
                 res.status(500).end();
             }

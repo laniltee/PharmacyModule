@@ -1,9 +1,11 @@
-<!-- Content Header (Page header) -->
+
 <section class="content-header">
     <h1>
         Supplier Chain Management
         <small>Information on suppliers of the systems</small>
     </h1>
+    
+    
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="#stock"><i class="fa fa-suppliers"></i>Suppliers</a></li>
@@ -12,14 +14,17 @@
 
 <!-- Main content -->
 <section class="content">
+    
     <div class="row">
         <div class="col-md-8">
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Current Suppliers</h3>
+                    <h4>Type A Name Of A Supplier To Get Details</h4>
+                    <input type="text" data-ng-model="typeName"/>
 
                     <div class="box-body">
-                        <table datatable="ng" id="example1" class="table table-bordered table-striped">
+                        <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Supplier ID</th>
@@ -30,14 +35,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td id="suppliername_td_{{supplier.suppliername}}"><a href="">{{supplier.suppliername}}</a></td>
-                                    <td id="name_td_{{supplier.suppliername}}">{{supplier.name}}</td>
-                                    <td id="email_td_{{supplier.suppliername}}">{{supplier.email}}</td>
-                                    <td id="department_td_{{supplier.suppliername}}">{{supplier.department}}</td>
+                                <tr ng-repeat="sup in suppliers | filter:typeName">
+                                    <td >{{sup.name}}</td>                                    
+                                    <td >{{sup.email}}</td>
+                                    <td >{{sup.address}}</td>
+                                    <td >{{sup.contact}}</td>
                                     <td>
                                         <!--<button class="btn btn-xs btn-info" ng-click="editUser(supplier.suppliername)"><i class="fa fa-pencil"></i>  Edit</button>-->
-                                        <button class="btn btn-xs btn-danger" ng-click="removeUser(supplier.suppliername)"><i class="fa fa-close"></i>  Remove</button>
+                                        <button class="btn btn-xs btn-danger" ng-click="deleteSupplier(sup.name)"><i class="fa fa-close"></i>  Remove</button>
                                     </td>
                             </tbody>
                             <tfoot>
@@ -50,6 +55,7 @@
                                 </tr>
                             </tfoot>
                         </table>
+                        </li>
                     </div>
                 </div>
             </div>
@@ -67,36 +73,87 @@
                                 <div class="form-group">
                                     <label for="full_name">Supplier Name</label>
                                     <div>
-                                        <input type="text" class="form-control" requried="requried" id="full_name" ng-model="full_name" placeholder="Name">
+                                        <input type="text" class="form-control" ng-model="supName" placeholder="Name">{{supName}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="control-label">Email</label>
                                     <div class="">
-                                        <input type="email" class="form-control" requried="requried" id="email" ng-model="email"  placeholder="Name">
+                                        <input type="email" class="form-control"ng-model="supEmail"  placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="control-label">Address</label>
                                     <div class="">
-                                        <input type="text" class="form-control" requried="requried" id="password" ng-model="password" placeholder="Name">
+                                        <input type="text" class="form-control"  ng-model="supAddress" placeholder="Address">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="control-label">Contact No.</label>
                                     <div class="">
-                                        <input type="text" class="form-control" requried="requried" id="password" ng-model="password" placeholder="Name">
+                                        <input type="text" class="form-control"  ng-model="supContact" placeholder="Contact Number">
                                     </div>
                                 </div>
 
                             </div>
+                            
                             <!-- /.box-body -->
                             <div class="box-footer">
                                 <button ng-click="neglect()" class="btn btn-default">Cancel</button>
-                                <button ng-click="addUser()" class="btn btn-primary pull-right">{{functionHeader}}</button>
+                                <button ng-click="addSupplier()" class="btn btn-primary pull-right">Submit</button>
                             </div>
+                            
                             <!-- /.box-footer -->
                         </form>
+                        
+                        
+                        
+                        <form >
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="full_name">Update Supplier</label></br>
+                                    <label for="full_name">Name of Supplier</label>
+                                    <div>
+                                        <input type="text" class="form-control" ng-model="supName" placeholder="Old Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Update Name</label>
+                                    <div class="">
+                                        <input type="text" class="form-control"  ng-model="supdName" placeholder="Update Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Email</label>
+                                    <div class="">
+                                        <input type="text" class="form-control"  ng-model="supEmail" placeholder="Update Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Address</label>
+                                    <div class="">
+                                        <input type="text" class="form-control"  ng-model="supAddress" placeholder="Update Address">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Contact No.</label>
+                                    <div class="">
+                                        <input type="text" class="form-control"  ng-model="supContact" placeholder="Update Contact No.">
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button ng-click="neglect()" class="btn btn-default">Cancel</button>
+                                <button ng-click="updateSupplier(supName,supdName,supEmail,supAddress,supContact)" class="btn btn-primary pull-right">Submit</button>
+                            </div>
+                            
+                            <!-- /.box-footer -->
+                        </form>
+                        
+                        
                     </div>
                 </div>
             </div>

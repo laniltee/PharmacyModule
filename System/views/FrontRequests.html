@@ -15,6 +15,8 @@
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title">All Requests</h3>
+            <h4>Please Type A Drug</h4>
+            <input type="text" data-ng-model="drugType"/>
 
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -29,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="request in requests">
+                        <tr ng-repeat="request in requests | filter:drugType">
                             <td>{{request.requestID}}</td>
                             <td>{{request.drug}}</td>
                             <td>{{request.date}}</td>

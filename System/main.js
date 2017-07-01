@@ -168,6 +168,11 @@ app.get('/stock', function (request, response) {
     stock.getAllStocks(response);
 });
 
+//Returns all stock
+app.get('/stock/:id', function (request, response) {
+    stock.getStock(request.params.id, response);
+});
+
 //Add new stock
 app.post('/stock', function (request, response) {
     stock.addStock(request.body, response);

@@ -32,13 +32,13 @@ app.config(function ($routeProvider, $locationProvider) {
                 templateUrl: "views/AddNewBatch.html",
                 controller: "StockController"
             })
-            .when("/stock/:id/edit", {
+            .when("/stock/edit/:id", {
                 templateUrl: "views/EditStock.html",
                 controller: "StockController"
             })
             .when("/stock/:id/order", {
                 templateUrl: "views/OrderStock.html",
-                controller: "StockController"
+                controller: "OrderStockController"
             })
             .when("/users", {
                 templateUrl: "views/Users.html",
