@@ -73,7 +73,9 @@
             status:"pending"
         };
 
-        if(reqAmount != null || !isNaN(newRequest.amount)) {
+        console.log(newRequest);
+
+        if(!isNaN(newRequest.amount)) {
            $http.post("http://localhost:8086/requests", newRequest).then(function (response) {
                alert("Request sent successfully!");
                refreshStocks();
@@ -128,6 +130,10 @@
                 alert("Request Rejecting Failed !")
             });
 
+    };
+
+    $scope.isInvalidNumber = function(number){
+        return isNaN(number);
     };
 });
 
