@@ -38,7 +38,7 @@ app.config(function ($routeProvider, $locationProvider) {
             })
             .when("/stock/:id/order", {
                 templateUrl: "views/OrderStock.html",
-                controller: "StockController"
+                controller: "OrderStockController"
             })
             .when("/users", {
                 templateUrl: "views/Users.html",

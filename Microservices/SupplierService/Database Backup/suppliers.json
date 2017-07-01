@@ -1,0 +1,30 @@
+{ 
+    "_id" : ObjectId("5954e872e1565c229876af93"), 
+    "supplierName" : "w", 
+    "email" : "w", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5956ff437ba72c247070c5d7"), 
+    "name" : "asoka", 
+    "email" : "Shantha", 
+    "address" : "123456789", 
+    "contact" : "0714467349", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("595706317ba72c247070c5da"), 
+    "name" : "THILINI", 
+    "email" : "Herath", 
+    "address" : "44", 
+    "contact" : "7", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("595758af05746b24f4f33cc7"), 
+    "name" : "movinda", 
+    "email" : "movinda@gmail.com", 
+    "address" : "5", 
+    "contact" : "0757358106", 
+    "__v" : NumberInt(0)
+}

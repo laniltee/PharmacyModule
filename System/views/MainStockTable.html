@@ -12,7 +12,8 @@
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title">All Items in Stock</h3>
-
+            <h5>Enter A Drug Name</h5>
+            <input type="text" data-ng-model="typeDrug">
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -29,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="sto in allStock">
+                        <tr ng-repeat="sto in allStock | filter:typeDrug" >
                             <td>{{sto.stockId}}</td>
                             <td>{{sto.drugName}}</td>
                             <td>{{sto.brandName}}</td>
