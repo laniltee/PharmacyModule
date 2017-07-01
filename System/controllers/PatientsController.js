@@ -24,9 +24,11 @@ app.controller("PatientsController", function ($scope, $http, $route, $routePara
     function loadPatients(){
         $http.get(patientService + "patients").then(function (response) {
             $scope.patients = response.data;
-        }), function (response) {
+        }, function (response) {
 
-        };
+        }).finally(function(){
+            
+        });
 
         $http.get(patientService + "items").then(function (response) {
             $scope.allStock = response.data;

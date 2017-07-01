@@ -16,6 +16,14 @@ app.config(function ($routeProvider, $locationProvider) {
                 templateUrl: "views/MainStockTable.html",
                 controller: "StockController"
             })
+            .when("/", {
+                templateUrl: "views/Dashboard.html",
+                controller: "DashboardController"
+            })
+            .when("/front", {
+                templateUrl: "views/Dashboard.html",
+                controller: "DashboardController"
+            })
             .when("/stock/add", {
                 templateUrl: "views/AddNewStock.html",
                 controller: "StockController"
@@ -50,6 +58,10 @@ app.config(function ($routeProvider, $locationProvider) {
             })
             .when("/front_patients", {
                 templateUrl: "views/Patients.html",
+                controller: "PatientsController"
+            })
+            .when("/patients", {
+                templateUrl: "views/PatientsBack.html",
                 controller: "PatientsController"
             })
             .when("/prescriptions/add", {

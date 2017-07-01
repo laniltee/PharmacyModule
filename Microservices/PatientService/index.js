@@ -227,6 +227,19 @@ app.get("/items", function(req, res){
 	});
 });
 
+//Searches all the patients
+app.get("/patients", function(req, res){
+	console.log("[ROUTE CALLED][GET] /patients");
+	patients.find({name: new RegExp('^' + reqId)}, function(error, patients){
+		if(error){
+			console.log("[ERROR] FETCHING PATIENTS FROM DATABASE FAILED");
+			res.end();
+		}
+		console.log("[DB] PATIENTS FROM DATABASE SUCCESS");
+		res.json(patients);
+	});
+});
+
 
 
 
