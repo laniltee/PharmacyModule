@@ -1,13 +1,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
 	<h1>
-		Edit Stock
+		Add Stock
 		<small>Fill all the information about adding drug</small>
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 		<li><a href="#stock"><i class="fa fa-th"></i>Stock</a></li>
-		<li><a href="#stock/D656561216"><i class="fa fa-flask"></i>Panadol</a></li>
 		<li><a href=""><i class="fa fa-pencil"></i>Edit</a></li>
 	</ol>
 </section>
@@ -18,37 +17,38 @@
 	<!-- Default box -->
 	<div class="box">
 		<div class="box-header with-border">
-			<h3 class="box-title">Edit Stock Information</h3>
+			<h3 class="box-title">Stock Information</h3>
 
 			<div class="box-body">
 				<!-- form start -->
 				<form class="form-horizontal">
 					<div class="box-body">
 						<div class="form-group">
-						<label for="" class="col-sm-2 control-label">Name</label>
+						<label for="" class="col-sm-2 control-label">Stock ID</label>
 
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="" placeholder="Name">
+								<input type="text" disabled ng-model="currentStock.stockId" class="form-control" id="stockId" placeholder="Stock ID">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Category</label>
+						<label for="" class="col-sm-2 control-label">Drug Name</label>
 
 							<div class="col-sm-10">
-								<select class="form-control">
-									<option>Cat 1</option>
-									<option>Cat 2</option>
-									<option>Cat 3</option>
-									<option>Cat 4</option>
-									<option>Cat 5</option>
-								</select>
+								<input type="text" ng-model="currentStock.drugName" class="form-control" id="drugName" placeholder="Drug Name">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Unit</label>
+						<label for="" class="col-sm-2 control-label">Brand Name</label>
 
 							<div class="col-sm-10">
-								<select class="form-control">
+								<input type="text" ng-model="currentStock.brandName" class="form-control" id="brandName" placeholder="Brand Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for=""  class="col-sm-2 control-label">Unit</label>
+
+							<div class="col-sm-10">
+								<select ng-model="currentStock.unit" class="form-control">
 									<option>Tablets</option>
 									<option>Capsule</option>
 									<option>Bottle</option>
@@ -58,46 +58,87 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Level 1 Container</label>
+						<label for="" class="col-sm-2 control-label">Number of Packs</label>
 
 							<div class="col-sm-10">
-								<select class="form-control">
-									<option>Level 1 Box</option>
-									<option>Level 2 Box</option>
-									<option>Level 3 Box</option>
-
-								</select>
+								<input type="text" ng-model="currentStock.noOfPacks" class="form-control" id="noOfPacks" >
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Level 2 Container</label>
+						<label for="" class="col-sm-2 control-label">Quantity in each Pack</label>
 
 							<div class="col-sm-10">
-								<select class="form-control">
-									<option>Level 1 Box</option>
-									<option>Level 2 Box</option>
-									<option>Level 3 Box</option>
-
-								</select>
+								<input type="text" ng-model="currentStock.qtyInPack" class="form-control" id="qtyInPack" placeholder="">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Level 3 Container</label>
+						<label for="" class="col-sm-2 control-label">Total</label>
 
 							<div class="col-sm-10">
-								<select class="form-control">
-									<option>Level 1 Box</option>
-									<option>Level 2 Box</option>
-									<option>Level 3 Box</option>
+								<input type="text" ng-model="currentStock.total" class="form-control" id="total" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Buying Price</label>
 
-								</select>
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.buyingAt" class="form-control" id="buyingAt" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Selling Price</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.sellingAt" class="form-control" id="sellingAt" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Batch ID</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.batchId" class="form-control" id="batchId" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Expire Date</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.expDate" class="form-control" id="expDate" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Manufacture Date</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.mfDate" class="form-control" id="mfDate" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Received Date</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.rcvDate" class="form-control" id="rcvDate" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Supplier</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.supplier" class="form-control" id="supplier" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Comment</label>
+
+							<div class="col-sm-10">
+								<input type="text" ng-model="currentStock.comment" class="form-control" id="comment" placeholder="">
 							</div>
 						</div>
 					</div>
 					<!-- /.box-body -->
 					<div class="box-footer">
-						<button href="#stock" class="btn btn-default">Cancel</button>
-						<button type="submit" class="btn btn-primary pull-right">Add</button>
+						<a href="#stock" class="btn btn-default">Cancel</a>
+						<button type="submit" ng-click="updateStock(currentStock.stockId)" class="btn btn-primary pull-right">Update</button>
 					</div>
 					<!-- /.box-footer -->
 				</form>

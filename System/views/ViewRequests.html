@@ -37,11 +37,11 @@
                             <td>{{req.date}}</td>
                             <td>{{req.amount}}</td>
                             <td>{{req.userID}}</td>
-                            <td>{{req.department}}</td>
-                            <td><span class="label label-{{req.status == 'pending'? 'warning' : 'primary'}}">{{req.status == 'pending' ? 'Pending' : req.status}}</span></td>
+                            <td>Sub Department</td>
+                            <td><span class="label label-{{req.status == 'pending'? 'warning' : 'primary'}}">{{req.status}}</span></td>
                             <td>
-                                <button class="btn btn-xs btn-info" ng-click="approveRequest(req.requestID)"><i class="fa fa-check"></i>  Approve</button>
-                                <button class="btn btn-xs btn-danger" ng-click="rejectRequest(req.requestID)"><i class="fa fa-close"></i>  Reject</button>
+                                <button ng-disabled="req.status == 'approved'" class="btn btn-xs btn-info" ng-click="approveRequest(req.requestID)"><i class="fa fa-check"></i>  Approve</button>
+                                <button ng-disabled="req.status == 'rejected'" class="btn btn-xs btn-danger" ng-click="rejectRequest(req.requestID)"><i class="fa fa-close"></i>  Reject</button>
                             </td>
                         </tr>
                     <tfoot>

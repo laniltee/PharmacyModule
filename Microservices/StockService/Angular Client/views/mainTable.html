@@ -1,0 +1,62 @@
+<section class="content-header">
+    <h1>
+        Drug Stock
+        <small>Information about available drugs</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-th"></i>Stock</a></li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">All Items in Stock</h3>
+
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Stock ID</th>
+                            <th>Drug Name</th>
+                            <th>Brand Name</th>
+                            <th>Pack Quantity</th>
+                            <th>Quantity in each Pack</th>
+                            <th>Total</th>
+                            <th>Selling Price</th>
+                            <th>Supplier</th>
+							<th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sto in stocks">
+                            <td>{{sto.stockId}}</td>
+                            <td>{{sto.drugName}}</td>
+                            <td>{{sto.brandName}}</td>
+                            <td>{{sto.nuOfPacks}}</td>
+                            <td>{{sto.qtyInPack}}</td>
+                            <td>{{sto.total}}</td>
+                            <td>{{sto.sellingAt}}</td>
+                            <td>{{sto.supplier}}</td>
+                            <td>
+                                <button class="btn btn-xs btn-info" ng-click="viewStock(sto.stockId)"><i class="fa fa-check"></i>  View</button>
+                                <button class="btn btn-xs btn-danger" ng-click="deleteStock(sto.stockId)"><i class="fa fa-close"></i>  Delete</button>
+                            </td>
+                        </tr>
+                    <tfoot>
+                        <tr>
+                            <th>Stock ID</th>
+                            <th>Drug Name</th>
+                            <th>Brand Name</th>
+                            <th>Pack Quantity</th>
+                            <th>Quantity in each Pack</th>
+                            <th>Total</th>
+                            <th>Selling Price</th>
+                            <th>Supplier</th>
+							<th>Actions</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+</section>

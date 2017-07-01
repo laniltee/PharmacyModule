@@ -75,16 +75,49 @@
 
         console.log(newRequest);
 
-        if(!isNaN(newRequest.amount)) {
-           $http.post("http://localhost:8086/requests", newRequest).then(function (response) {
-               alert("Request sent successfully!");
-               refreshStocks();
-           }, function (response) {
-               alert("Requesting Failed!")
-           });
-       }else{
-        alert("Please enter a valid request quantity!");
+//Regular Expression to validate numbers
+        
+var exp = /^[0-9]+$/;
+
+        
+if(reqAmount != null) {
+            
+    if (reqAmount.match(exp)) {
+                
+        $http.post("http://localhost:8086/requests", newRequest).then(function(response){
+                    alert("Request sent successfully!");
+                    
+             refreshStocks();
+                
+    }, function (response) {
+                    
+        alert("Requesting Failed!")
+                
+    });
+            
+    }else{
+                
+        alert("Please enter a valid numeric amount!");
+                
+        refreshStocks();
     }
+        
+}else{
+            
+        alert("Please enter the request quantity!");
+}
+
+
+    //     if(!isNaN(newRequest.amount)) {
+    //        $http.post("http://localhost:8086/requests", newRequest).then(function (response) {
+    //            alert("Request sent successfully!");
+    //            refreshStocks();
+    //        }, function (response) {
+    //            alert("Requesting Failed!")
+    //        });
+    //    }else{
+    //     alert("Please enter a valid request quantity!");
+    // }
 
 
 };

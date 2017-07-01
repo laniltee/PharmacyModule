@@ -7,7 +7,7 @@
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="#stock"><i class="fa fa-th"></i>Stock</a></li>
-        <li><a href=""><i class="fa fa-plus"></i>Add</a></li>
+        <li><a href=""><i class="fa fa-pencil"></i>Edit</a></li>
     </ol>
 </section>
 
@@ -24,79 +24,123 @@
                 <form class="form-horizontal">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Name</label>
+                        <label for="" class="col-sm-2 control-label">Stock ID</label>
 
                             <div class="col-sm-10">
-                                <input ng-model="name" type="text" class="form-control" id="" placeholder="Name">
+                                <input type="text" ng-model="currentStock.stockId" class="form-control" id="stockId" placeholder="Stock ID">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Category</label>
+                        <label for="" class="col-sm-2 control-label">Drug Name</label>
 
                             <div class="col-sm-10">
-                                <select class="form-control" ng-model="category">
-                                    <option value="Cat 1">Cat 1</option>
-                                    <option value="Cat 2">Cat 2</option>
-                                    <option value="Cat 3">Cat 3</option>
-                                    <option value="Cat 4">Cat 4</option>
-                                    <option value="Cat 5">Cat 5</option>
+                                <input type="text" ng-model="currentStock.drugName" class="form-control" id="drugName" placeholder="Drug Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Brand Name</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.brandName" class="form-control" id="brandName" placeholder="Brand Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for=""  class="col-sm-2 control-label">Unit</label>
+
+                            <div class="col-sm-10">
+                                <select ng-model="currentStock.unit" class="form-control">
+                                    <option>Tablets</option>
+                                    <option>Capsule</option>
+                                    <option>Bottle</option>
+                                    <option>Drop</option>
+                                    <option>Equipment</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label" >Unit</label>
+                        <label for="" class="col-sm-2 control-label">Number of Packs</label>
 
                             <div class="col-sm-10">
-                                <select class="form-control" ng-model="unit">
-                                    <option value="Tablets">Tablets</option>
-                                    <option value="Capsule">Capsule</option>
-                                    <option value="Bottle">Bottle</option>
-                                    <option value="Drop">Drop</option>
-                                    <option value="Equipment">Equipment</option>
-                                </select>
+                                <input type="text" ng-model="currentStock.noOfPacks" class="form-control" id="noOfPacks" >
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label" >Level 1 Container</label>
+                        <label for="" class="col-sm-2 control-label">Quantity in each Pack</label>
 
                             <div class="col-sm-10">
-                                <select class="form-control" ng-model="containerA">
-                                    <option value="Level 1 Box">Level 1 Box</option>
-                                    <option value="Level 2 Box">Level 2 Box</option>
-                                    <option value="Level 3 Box">Level 3 Box</option>
-
-                                </select>
+                                <input type="text" ng-model="currentStock.qtyInPack" class="form-control" id="qtyInPack" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Level 2 Container</label>
+
+                        <p hidden>{{currentStock.total = currentStock.qtyInPack * currentStock.noOfPacks}}</p>
+                        <label for="" class="col-sm-2 control-label">Total</label>
 
                             <div class="col-sm-10">
-                                <select class="form-control" ng-model="containerB">
-                                    <option value="Level 1 Box">Level 1 Box</option>
-                                    <option value="Level 2 Box">Level 2 Box</option>
-                                    <option value="Level 3 Box">Level 3 Box</option>
-
-                                </select>
+                                <input type="text" ng-model="currentStock.total" class="form-control" id="total" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Level 3 Container</label>
+                        <label for="" class="col-sm-2 control-label">Buying Price</label>
 
                             <div class="col-sm-10">
-                                <select class="form-control" ng-model="containerC">
-                                    <option value="Level 1 Box">Level 1 Box</option>
-                                    <option value="Level 2 Box">Level 2 Box</option>
-                                    <option value="Level 3 Box">Level 3 Box</option>
+                                <input type="text" ng-model="currentStock.buyingAt" class="form-control" id="buyingAt" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Selling Price</label>
 
-                                </select>
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.sellingAt" class="form-control" id="sellingAt" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Batch ID</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.batchId" class="form-control" id="batchId" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Expire Date</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.expDate" class="form-control" id="expDate" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Manufacture Date</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.mfDate" class="form-control" id="mfDate" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Received Date</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.rcvDate" class="form-control" id="rcvDate" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Supplier</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.supplier" class="form-control" id="supplier" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Comment</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="currentStock.comment" class="form-control" id="comment" placeholder="">
                             </div>
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button href="#stock" class="btn btn-default">Cancel</button>
-                        <button ng-click="addStock()" class="btn btn-primary pull-right">Add</button>
+                        <a href="#stock" class="btn btn-default">Cancel</a>
+                        <button type="submit" ng-click="addStock()" class="btn btn-primary pull-right">Add</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
